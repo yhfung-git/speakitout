@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: %i['show' 'edit' 'update' 'destroy']
+  before_action :find_post, only: %i[show edit update destroy]
 
   def show
   end
