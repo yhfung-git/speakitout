@@ -11,6 +11,8 @@
 @import "components/index";
 @import "pages/index";
 
-body {
-  margin-top: 100px;
+body{
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 70px;
 }
