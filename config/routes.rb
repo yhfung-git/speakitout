@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
   
-  root to: "pages#home"
+  root to: "posts#index"
 
   devise_scope :user do
     get 'users', to: 'users/registrations#show', as: 'user'
