@@ -80,3 +80,5 @@ group :test do
 end
 
 gem "faker"
+
+gem "geared_pagination", "~> 1.1"
