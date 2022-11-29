@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
-
   root to: "posts#index"
 
   devise_scope :user do
