@@ -81,4 +81,4 @@ end
 
 gem "faker"
 
-gem "geared_pagination", "~> 1.1"
+gem 'will_paginate'
