@@ -1,5 +1,9 @@
 <%= simple_form_for(@post) do |f| %>
-  <%= f.input :title, placeholder: "Enter the title" %>
-  <%= f.input :content, placeholder: "Content" %>
-  <%= f.submit value: "Post", class: "btn btn-flat" %>
+  <div class="container">
+    <div class="box">
+    <%= f.input :title, placeholder: "Enter the title" %>
+    <%= f.input :content, placeholder: "Content" %>
+    <%= f.submit value: "Post", class: "btn btn-primary p-4" %>
+    </div>
+  </div>
 <% end %>

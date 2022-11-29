@@ -14,3 +14,15 @@
 body {
   margin-top: 100px;
 }
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: solid 1px;
+  border-color: rgb(205, 205, 209);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #f1f1ed;
+  padding: 12px;
+
+ }
