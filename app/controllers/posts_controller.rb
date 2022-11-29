@@ -10,7 +10,14 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 5)
+    @posts = Post.all
+    if params[:query].present?
+      @posts = @posts.search_by_title_and_content(params[:query])
+      @posts = Post.paginate(page: params[:page], per_page: 5)
+    else
+      @posts = Post.all
+      @posts = Post.paginate(page: params[:page], per_page: 5)
+    end
   end
 
   def create
