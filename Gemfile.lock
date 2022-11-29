@@ -121,6 +121,9 @@ GEM
     ffi (1.15.5)
     font-awesome-sass (6.2.1)
       sassc (~> 2.0)
+    geared_pagination (1.1.2)
+      activesupport (>= 5.0)
+      addressable (>= 2.5.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     http-accept (1.7.0)
@@ -280,6 +283,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   font-awesome-sass (~> 6.1)
+  geared_pagination (~> 1.1)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)

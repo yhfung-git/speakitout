@@ -1,18 +1,18 @@
-<div class="posts-container list" id="list">
+<div>
   <% @posts.each do |post| %>
-    <div class="post">
+    <div class="post post-item">
       <h3><%= post.title %></h3>
       <p><%= post.content %></p>
     </div>
   <% end %>
+
+  <%# <div id="pagination-container"></div>
 
   <div class="pagination">
     <a href="#">&laquo;</a>
     <a href="#">1</a>
     <a href="#" class="active">2</a>
     <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
     <a href="#">&raquo;</a>
-  </div>
+  </div>%>
 </div>
