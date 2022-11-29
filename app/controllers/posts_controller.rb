@@ -17,6 +17,8 @@ class PostsController < ApplicationController
     @post.user = current_user
     if @post.save
       redirect_to post_path(@post)
+      flash[:notice] = "Your post has been saved. Keep being positive"
+    end
     else
       render 'new'
     end
@@ -28,6 +30,7 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       redirect_to post_path(@post)
+      flash[:notice] = "Your post has been updated. Keep enjoying your day"
     else
       render 'edit'
     end
@@ -35,6 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+    flash[:notice] = "Your post has been deleted. If needed, post a new one. Have a nice day"
     redirect_to posts_path
   end
 
