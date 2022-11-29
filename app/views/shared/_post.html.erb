@@ -5,7 +5,7 @@
       <p><%= post.content %></p>
     </div>
   <% end %>
-  <div class="pagination">
-    <%= will_paginate @users %>
+  <div class="pagination" id="bottom">
+    <%= will_paginate @users, :container => false, :params => {:anchor => "bottom"} %>
   </div>
 </div>
