@@ -7,7 +7,7 @@
     <p class="fw-bold"> <%= @post.title %> </p>
     <p class="mt-1"> <%= @post.content %> </p>
     <div class="tool-bar mt-3">
-      <%= link_to "Delete", post_path, data: { method: :delete } %>
+      <%= link_to "Delete", post_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@post.title} ?"} %>
       <%= link_to "Edit", edit_post_path(@post)%>
     </div>
   </div>

@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post)
     else
-      render 'new'
+      render 'new', status: :unproccessable_entity
     end
   end
 
@@ -37,13 +37,13 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to post_path(@post)
     else
-      render 'edit'
+      render 'edit', status: :unproccessable_entity
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, status: :see_other
   end
 
   private

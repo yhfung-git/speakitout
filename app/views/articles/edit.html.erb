@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for(@article) do |f| %>
+    <%= f.input :title, placeholder: "Enter the title" %>
+    <%= f.input :url, placeholder: "Enter the url" %>
+    <%= f.input :message, placeholder: "Content" %>
+    <%= f.submit value: "Update", class: "btn btn-ghost" %>
+    <%= link_to "Back to #{@article.title}", article_path(@article), class: "btn btn-ghost" %>
+  <% end %>
+</div>
