@@ -23,7 +23,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-    if @post.save
+      if @post.save
+      flash[:notice] = "Your post has been saved. Keep being positive"
       redirect_to post_path(@post)
     else
       render 'new', status: :unproccessable_entity
@@ -35,6 +36,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
+      flash.now[:notice] = "Your post has been updated. Keep enjoying your day"
       redirect_to post_path(@post)
     else
       render 'edit', status: :unproccessable_entity
@@ -43,7 +45,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path, status: :see_other
+    flash.now[:notice] = "Your post has been deleted. If needed, post a new one. Have a nice day"
+    redirect_to posts_path
   end
 
   private
