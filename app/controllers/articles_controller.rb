@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   # private
 
   def article_params
-    params.require(:article).permit(:title, :message, :url)
+    params.require(:article).permit(:title, :message, :url, :photo)
   end
 
   def set_article

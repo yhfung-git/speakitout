@@ -1,5 +1,6 @@
 <div class="container">
-  <div>
+  <div class="article">
+    <%= @article.photo.attached? ? (cl_image_tag @article.photo.key, crop: :fill) : image_tag(asset_path("mirror.jpg")) %>
     <h1><%= @article.title %></h1>
     <p><%= @article.url %></p>
     <p><%= @article.message %></p>

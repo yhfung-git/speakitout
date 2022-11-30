@@ -1,13 +1,22 @@
 <div class="container">
-<%= link_to "New Article", new_article_path, class:"btn btn-ghost" %>
-  <% @articles.each do |article| %>
-    <div>
-      <h2><%= article.title %></h2>
-      <p><%= article.url %></p>
-      <p><%= article.message %></p>
-      <%= current_user.photo.attached? ? (cl_image_tag current_user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
-      <span class="text-muted fs-6">Posted by <strong style="text-transform:uppercase"><%= current_user.nickname %></strong></span>
-      <%= link_to "Details", article_path(article), class: "btn btn-ghost" %>
-    </div>
-  <% end %>
+
+  <div class="d-flex justify-content-center py-3">
+    <%= link_to "New Article", new_article_path, class:"btn btn-ghost" %>
+  </div>
+
+  <div class="card-trip">
+    <% @articles.each do |article| %>
+      <%= link_to article_path(article), class: "text-decoration:none" do %>
+      <%= article.photo.attached? ? (cl_image_tag article.photo.key, crop: :fill, class:"article-photo") : image_tag(asset_path("mirror.jpg"), class:"article-photo") %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= article.title %></h2>
+          <p><%= article.message%></p>
+        </div>
+        <%= current_user.photo.attached? ? (cl_image_tag current_user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>
