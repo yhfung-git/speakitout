@@ -8,8 +8,12 @@
       <p class="fw-bold"> <%= @post.title %> </p>
       <p class="mt-1"> <%= @post.content %> </p>
       <div class="tool-bar mt-3">
-        <%= link_to "Delete", post_path, data: { method: :delete } %>
-        <%= link_to "Edit", edit_post_path(@post)%>
+        <%= link_to post_path, data: { method: :delete } do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+        <%= link_to edit_post_path(@post) do%>
+          <i class="fa-solid fa-pen-to-square"></i>
+        <% end %>
       </div>
     </div>
     <div class="mt-2 comment-block pb-3 border-bottom">
