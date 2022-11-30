@@ -8,14 +8,11 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
-  opacity: 0.9;
 }
 
-// .article-photo:hover {
-//   overflow: hidden;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-// }
+.display {
+  border: 2px solid rgb(0, 255, 17);
+}
 
 .card-trip > img {
   height: 200px;
