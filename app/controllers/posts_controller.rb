@@ -26,9 +26,9 @@ class PostsController < ApplicationController
       if @post.save
       flash[:notice] = "Your post has been saved. Keep being positive"
       redirect_to post_path(@post)
-      else
-      render 'new'
-      end
+    else
+      render 'new', status: :unproccessable_entity
+    end
   end
 
   def edit
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
       flash.now[:notice] = "Your post has been updated. Keep enjoying your day"
       redirect_to post_path(@post)
     else
-      render 'edit'
+      render 'edit', status: :unproccessable_entity
     end
   end
 
