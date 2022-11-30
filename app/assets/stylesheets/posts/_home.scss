@@ -1,0 +1,30 @@
+// /users/hc3y/code/d4v1dh/speakitout/app/assets/stylesheets/application.scss
+// Author: dhalley <dhalley@mail.com>
+// Created: 2022-11-29 16:18:13
+// Updated: 2022-11-29 17:55:34 by dhalley
+p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #fcf8f3;
+  .posts {
+    background-color: #ffffff;
+  }
+  .new-post {
+    background-color: #f2f2f2;
+  }
+  .comment-block {
+    height: 100px;
+    width: 100%;
+    textarea {
+      resize: none;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .comment-list {
+    height: 200px;
+  }
+}

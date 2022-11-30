@@ -10,13 +10,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-body {
-  margin-top: 100px;
-}
+@import "posts/index";
 
 .container {
   width: 80%;
+}
+
+body {
+  margin-top: 68px;
 }
 
 a {
