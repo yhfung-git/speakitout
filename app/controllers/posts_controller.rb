@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-      if @post.save
+    if @post.save
       flash[:notice] = "Your post has been saved. Keep being positive"
       redirect_to post_path(@post)
     else
