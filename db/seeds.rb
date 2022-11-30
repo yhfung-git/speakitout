@@ -8,9 +8,11 @@
 
 require "faker"
 
+# Post
 Post.destroy_all
+puts "Posts destroyed"
 
-20.times do
+100.times do
   posts = Post.create(
     title: Faker::Lorem.sentence(word_count: 3),
     content: Faker::Lorem.paragraph(sentence_count: 2),
@@ -20,4 +22,20 @@ Post.destroy_all
   posts.save!
 end
 
-puts "20 posts created"
+puts "100 posts created"
+
+# Article
+Article.destroy_all
+puts "Articles destroyed"
+
+100.times do
+  articles = Article.create(
+    title: Faker::Lorem.sentence(word_count: 3),
+    message: Faker::Lorem.paragraph_by_chars,
+    url: Faker::LoremFlickr.image,
+    user_id: 1
+  )
+  articles.save!
+end
+
+puts "100 articles created"
