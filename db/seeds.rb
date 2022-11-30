@@ -10,7 +10,7 @@ require "faker"
 
 Post.destroy_all
 
-10.times do
+20.times do
   posts = Post.create(
     title: Faker::Lorem.sentence(word_count: 3),
     content: Faker::Lorem.paragraph(sentence_count: 2),
@@ -20,4 +20,4 @@ Post.destroy_all
   posts.save!
 end
 
-puts "10 posts created"
+puts "20 posts created"

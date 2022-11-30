@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :find_post, only: %i[show edit update destroy]
 
   def show
@@ -10,10 +11,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts = Post.paginate(page: params[:page], per_page: 5)
     if params[:query].present?
       @posts = @posts.search_by_title_and_content(params[:query])
     else
-    @posts = Post.all
+      @posts = Post.all
+      @posts = Post.paginate(page: params[:page], per_page: 5)
     end
   end
 
