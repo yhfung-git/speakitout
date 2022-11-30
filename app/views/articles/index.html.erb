@@ -4,19 +4,22 @@
     <%= link_to "New Article", new_article_path, class:"btn btn-ghost" %>
   </div>
 
-  <div class="card-trip" data-controller="display-card-infos">
-    <% @articles.each do |article| %>
+  <% @articles.each do |article| %>
+    <div class="card-trip my-4" data-controller="display-card-infos">
+      <%# article photo %>
+      <%= article.photo.attached? ? (cl_image_tag article.photo.key, crop: :fill, class:"article-photo", data: { action: "click->display-card-infos#displayCard" }) : image_tag(asset_path("mirror.jpg"), class:"article-photo", data: { action: "click->display-card-infos#displayCard" }) %>
       <%= link_to article_path(article), class: "text-decoration:none" do %>
-      <%= article.photo.attached? ? (cl_image_tag article.photo.key, crop: :fill, class:"article-photo") : image_tag(asset_path("mirror.jpg"), class:"article-photo") %>
-      <div class="card-trip-infos">
+      <%# card infos %>
+      <div class="card-trip-infos" data-display-card-infos-target="card">
         <div>
           <h2><%= article.title %></h2>
           <p><%= article.message%></p>
         </div>
+        <%# user details %>
         <%= current_user.photo.attached? ? (cl_image_tag current_user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
       </div>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
 </div>

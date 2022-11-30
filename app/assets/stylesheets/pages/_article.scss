@@ -1,22 +1,21 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .article-photo {
   height: 200px;
   width: 100%;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
-.article-photo:hover {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  opacity: 1;
-}
+// .article-photo:hover {
+//   overflow: hidden;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// }
 
 .card-trip > img {
   height: 200px;
@@ -43,10 +42,6 @@
   align-items: flex-end;
   position: relative;
   display: none;
-}
-
-.article-photo:hover + .card-trip-infos {
-  display: block;
 }
 
 .card-trip-infos .card-trip-user {
