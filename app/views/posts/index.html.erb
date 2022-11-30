@@ -3,7 +3,7 @@
   <div>
     <% @posts.each do |post| %>
       <%= link_to post_path(post) do %>
-      <div class="d-flex border p-2 rounded-2 mb-3">
+      <div class="d-flex border p-2 rounded-3 mb-3 posts">
         <div class="me-3">
           <%= current_user.photo.attached? ? (cl_image_tag current_user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
         </div>
