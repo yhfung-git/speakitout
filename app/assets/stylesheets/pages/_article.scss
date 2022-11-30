@@ -42,6 +42,11 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  display: none;
+}
+
+.article-photo:hover + .card-trip-infos {
+  display: block;
 }
 
 .card-trip-infos .card-trip-user {
