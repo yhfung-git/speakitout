@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
 
   def show
+    @replies = Reply.all.where(post_id: @post.id)
+    @reply = Reply.new
   end
 
   def new
@@ -13,7 +15,7 @@ class PostsController < ApplicationController
     if params[:query].present?
       @posts = @posts.search_by_title_and_content(params[:query])
     else
-    @posts = Post.all
+      @posts = Post.all
     end
   end
 

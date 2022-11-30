@@ -3,7 +3,6 @@ class CreateReplies < ActiveRecord::Migration[7.0]
     create_table :replies do |t|
       t.references :post, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
-      t.datetime :replied
       t.text :content
 
       t.timestamps

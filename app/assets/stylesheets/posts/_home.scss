@@ -1,7 +1,7 @@
 // /users/hc3y/code/d4v1dh/speakitout/app/assets/stylesheets/application.scss
 // Author: dhalley <dhalley@mail.com>
 // Created: 2022-11-29 16:18:13
-// Updated: 2022-11-30 08:31:33 by dhalley
+// Updated: 2022-11-30 11:55:34 by dhalley
 p {
   margin: 0;
 }
@@ -16,7 +16,7 @@ body {
     width: 100%;
   }
   .comment-block {
-    height: 100px;
+    min-height: 100px;
     width: 100%;
     textarea {
       resize: none;
@@ -25,7 +25,6 @@ body {
     }
   }
   .comment-list {
-    height: 200px;
   }
 }
 
