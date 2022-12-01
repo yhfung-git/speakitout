@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
-    resources :reply
+    resources :replies
   end
 
   resources :articles

@@ -1,0 +1,4 @@
+<%= simple_form_for @reply, :url => post_replies_path, :method => :posts do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
