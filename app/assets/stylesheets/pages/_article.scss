@@ -1,3 +1,33 @@
+.article {
+  background: linear-gradient(#4182c8, #757dd7);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  margin: 24px;
+  display: inline-flex;
+  color: white;
+  border-radius: 5px;
+}
+.article-photo {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+.article img {
+  height: 100%;
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+}
+
+.article p {
+  margin: 20px;
+  background: rgba(255, 255, 255, .06);
+}
+
 .card-trip {
   cursor: pointer;
   border-top-left-radius: 98px;
@@ -9,13 +39,6 @@
 .display {
   box-shadow: rgba(0, 255, 17, 0.2) 0px 0px 36px 3px, rgba(0, 255, 17, 0.06) 0px 0px 0px 2px;
   background: white;
-}
-
-.article-photo {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 100px;
 }
 
 .card-trip > img {
@@ -52,11 +75,6 @@
   width: 40px;
 }
 
-.article img {
-  height: 300px;
-  width: 300px;
-}
-
 .card-article {
   display: flex;
   justify-content: center;
@@ -76,7 +94,7 @@
 
 .click-me {
   border: 1px solid black;
-  border-radius: 3px;
+  border-radius: 20px;
   background-color: white;
   text-align: center;
   opacity: 0.9;

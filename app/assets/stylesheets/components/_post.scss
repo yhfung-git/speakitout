@@ -21,6 +21,7 @@
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
+  color: rgba(255, 255, 255, .6);
 }
 
 .pagination a, em {
@@ -37,20 +38,20 @@
   outline: none;
   cursor: pointer;
 
-  background-color: #FF7182;
+  background-color: #008952;
 
   margin: 5px;
   transition: 0.4s;
 
-  color: #fff;
+  color: white;
   font-size: 18px;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
-.pagniation button:hover {
-  background-color: #44eeaa;
-}
+// .pagniation button:hover {
+//   background-color: #44eeaa;
+// }
 
 .pagination em.current {
   background-color: #44eeaa;
@@ -60,10 +61,11 @@
 
 .pagination a:hover:not(.current) {
   background-color: #44eeaa;
+  color: rgba(255, 255, 255, 1);
 }
 
 .gap {
-  color: #fc6274;
+  color: #008952;
   font-size: 22px;
 }
 

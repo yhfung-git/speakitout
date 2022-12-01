@@ -18,8 +18,12 @@
     <div data-controller="quote">
       <span data-quote-target="output"></span>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="notice">
+      <%= notice %>
+    </div>
+    <div class="notice">
+      <%= alert %>
+    </div>
     <%= yield %>
   </body>
 </html>
