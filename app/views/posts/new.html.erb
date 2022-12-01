@@ -1,5 +1,10 @@
-<%= simple_form_for(@post) do |f| %>
-  <%= f.input :title, placeholder: "Enter the title" %>
-  <%= f.input :content, placeholder: "Content" %>
-  <%= f.submit value: "Post", class: "btn btn-ghost" %>
-<% end %>
+<div class="container">
+  <%= simple_form_for(@post) do |f| %>
+    <%= f.input :title, placeholder: "Enter the title" %>
+    <%= f.input :content, placeholder: "Content" %>
+    <%= f.input :private, type:"checkbox", label:"Only My Space" %>
+    <%= f.submit value: "Post", class: "btn btn-ghost" %>
+    <%= link_to "Home", "/", class: "btn btn-ghost" %>
+    <%= link_to "My Space", "/users", class: "btn btn-ghost" %>
+  <% end %>
+</div>
