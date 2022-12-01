@@ -7,7 +7,7 @@ export default class extends Controller {
     fetch("https://api.api-ninjas.com/v1/quotes?category=happiness", {
       method: "GET",
       headers: {
-        "X-Api-Key": "1qhQB9s28LvR3ZUiAMfxPw==Mm12nonKkjJXIQ4I",
+        "X-Api-Key": "",
       },
       contentType: 'application/json',
     }) 
