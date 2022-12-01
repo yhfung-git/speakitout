@@ -1,0 +1,37 @@
+.myspace {
+  display: inline-block;
+  display: flex;
+}
+
+.profile {
+  text-align: center;
+  border: 1px solid red;
+  margin: 20px 50px;
+  padding: 0 20px;
+}
+
+.profile img {
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.space {
+  border: 1px solid red;
+  margin: 20px 0;
+  margin-right: 50px;
+}
+
+.content {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 100%;
+  margin: 15px auto;
+}
+// .scroll {
+//   /* enable div scrolling */
+//   overflow: scroll;
+//   height: 8%;
+//   padding: 2%;
+//   width: 300px;
+//   margin: 0 auto;
+//   white-space: nowrap;
+// }

@@ -1,14 +1,25 @@
-<div class="container">
-  <div class="myspace">
+<div class="myspace">
+  <%# Profile %>
+  <div class="profile">
+    <h1 style="text-transform:uppercase"><%= @user.nickname %></h1>
     <%= @user.photo.attached? ? (cl_image_tag @user.photo.key, crop: :fill) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier')) %>
-    <h1><%= @user.nickname %></h1>
     <p>First name : <%= @user.first_name %></p>
     <p>Last name : <%= @user.last_name %></p>
-    <p>Nickname : <%= @user.nickname %></p>
     <p>Email : <%= @user.email %></p>
     <p>Bio : <%= @user.bio %></p>
     <%# <p>Friend</p>
     <p>Saved Posts</p> %>
     <%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-ghost" %>
+    <%= link_to "Write your post", new_post_path, class:"btn btn-ghost" %>
+  </div>
+
+  <%# Space %>
+  <div class="space scroll">
+    <% @user.posts.each do |post| %>
+      <div class="content">
+        <h3><%= post.title %></h3>
+        <%= post.content %>
+      </div>
+    <% end %>
   </div>
 </div>
