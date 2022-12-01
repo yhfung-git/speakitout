@@ -10,12 +10,12 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.where(private: "0")
+    @posts = Post.where(private: false)
     @posts = Post.paginate(page: params[:page], per_page: 5)
     if params[:query].present?
       @posts = @posts.search_by_title_and_content(params[:query])
     else
-      @posts = Post.where(private: "0")
+      @posts = Post.where(private: false)
       @posts = Post.paginate(page: params[:page], per_page: 5)
     end
   end
@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+    raise
     if @post.save
       flash[:notice] = "Your post has been saved. Keep being positive"
       redirect_to post_path(@post)
