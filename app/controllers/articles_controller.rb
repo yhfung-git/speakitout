@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to article_path(@article)
     else
-      render "new", status: :unproccessable_entity
+      render "new", status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to article_path(@article)
     else
-      render "edit", status: :unproccessable_entity
+      render "edit", status: :unprocessable_entity
     end
   end
 

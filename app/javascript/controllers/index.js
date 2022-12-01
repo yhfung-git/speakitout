@@ -13,5 +13,7 @@ application.register("display-card-infos", DisplayCardInfosController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import { initSortable } from "./init_sortable"
+initSortable()
 import QuoteController from "./quote_controller"
 application.register("quote", QuoteController)

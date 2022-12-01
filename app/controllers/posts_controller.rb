@@ -12,24 +12,26 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
-    @posts = Post.paginate(page: params[:page], per_page: 5)
+    posts = Post.where(private: false)
+    @posts = posts.paginate(page: params[:page], per_page: 5)
     if params[:query].present?
       @posts = @posts.search_by_title_and_content(params[:query])
     else
-      @posts = Post.all
-      @posts = Post.paginate(page: params[:page], per_page: 5)
+      @posts = posts.paginate(page: params[:page], per_page: 5)
     end
   end
 
   def create
     @post = Post.new(post_params)
+    # @post.title = post_params[:title]
+    # @post.content = post_params[:content]
+    # @post.private = true if post_params[:private] == "1"
     @post.user = current_user
     if @post.save
       flash[:notice] = "Your post has been saved. Keep being positive"
       redirect_to post_path(@post)
     else
-      render 'new', status: :unproccessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 
@@ -41,7 +43,7 @@ class PostsController < ApplicationController
       flash.now[:notice] = "Your post has been updated. Keep enjoying your day"
       redirect_to post_path(@post)
     else
-      render 'edit', status: :unproccessable_entity
+      render 'edit', status: :unprocessable_entity
     end
   end
 
@@ -58,6 +60,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :private)
   end
 end
