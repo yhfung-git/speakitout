@@ -17,7 +17,7 @@
   <div class="space-title">
     <h1>MY SPACE</h1>
   </div>
-  <div class="cards">
+  <div class="cards" id="myspace-cards">
     <% @user.posts.each do |post| %>
       <div class="card-category">
         <h4><%= post.title %></h4>
