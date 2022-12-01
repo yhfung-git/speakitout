@@ -14,11 +14,13 @@
   </div>
 
   <%# Space %>
-  <div class="space scroll">
+  <div class="space-title">
+    <h1>MY SPACE</h1>
+  </div>
+  <div class="cards">
     <% @user.posts.each do |post| %>
-      <div class="content">
-        <h3><%= post.title %></h3>
-        <%= post.content %>
+      <div class="card-category">
+        <h4><%= post.title %></h4>
       </div>
     <% end %>
   </div>

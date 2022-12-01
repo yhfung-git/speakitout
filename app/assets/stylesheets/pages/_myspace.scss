@@ -1,13 +1,12 @@
 .myspace {
   display: inline-block;
-  display: flex;
 }
 
+// Profile
 .profile {
   text-align: center;
   border: 1px solid red;
   margin: 20px 50px;
-  padding: 0 20px;
 }
 
 .profile img {
@@ -15,10 +14,11 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.space {
-  border: 1px solid red;
-  margin: 20px 0;
-  margin-right: 50px;
+// Space
+.space-title {
+  display: flex;
+  justify-content: center;
+  margin: 0;
 }
 
 .content {
@@ -26,6 +26,62 @@
   width: 100%;
   margin: 15px auto;
 }
+
+.card-category {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(72, 120, 169, 0.2);
+  background-color: rgba(72, 120, 169, 0.466);
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 16px 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
 // .scroll {
 //   /* enable div scrolling */
 //   overflow: scroll;
