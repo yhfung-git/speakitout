@@ -19,9 +19,11 @@
   </div>
   <div class="cards" id="myspace-cards">
     <% @user.posts.each do |post| %>
-      <div class="card-category">
-        <h4><%= post.title %></h4>
-      </div>
+      <%= link_to post_path(post) do %>
+        <div class="card-category">
+          <h4><%= post.title %></h4>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
