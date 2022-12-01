@@ -31,26 +31,26 @@
               <%= link_to "My Space", user_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?"}, class: "dropdown-item" %>
             </div>
-          <li class="nav-item">
-            <%= link_to "/articles", class: "nav-link" do %>
-              <span>Articles</span>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "#", class: "nav-link" do %>
-              <span>Guides</span>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "#", class: "nav-link" do %>
-              <i class="fa-regular fa-comment-dots"></i>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "#", class: "nav-link" do %>
-              <i class="fa-regular fa-bell"></i>
-            <% end %>
-          </li>
+            <li class="nav-item">
+              <%= link_to "/articles", class: "nav-link" do %>
+                <span>Articles</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "#", class: "nav-link" do %>
+                <span>Guides</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "#", class: "nav-link" do %>
+                <i class="fa-regular fa-comment-dots"></i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "#", class: "nav-link" do %>
+                <i class="fa-regular fa-bell"></i>
+              <% end %>
+            </li>
           </li>
         <% else %>
           <li class="nav-item">
