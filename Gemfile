@@ -82,4 +82,5 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'rack-cors'
 gem "faker"

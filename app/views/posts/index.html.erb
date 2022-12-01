@@ -8,7 +8,11 @@
           <%= current_user.photo.attached? ? (cl_image_tag current_user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
         </div>
         <div>
-          <span class="text-muted fs-6">Posted by <%= current_user.nickname %></span>
+          <div class="text-muted ">
+            <span class="fs-6">Posted by <%= current_user.nickname %></span>
+            <span class="mx-1">·</span>
+            <span><%= time_ago_in_words(post.created_at) %> ago</span>
+          </div>
           <p class="mb-0 fw-bold fs-5" ><%= post.title %></p>
           <p class="mb-0" ><%= post.content %></p>
         </div>
