@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   belongs_to :user
+  has_one_attached :photo
 
-  validates :title, :url, presence: true
+  validates :title, presence: true
   validates :message, presence: true, length: { minimum: 10 }
 end

@@ -11,15 +11,18 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  
+
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
+<<<<<<< HEAD
     <!--<div data-controller="quote">
       <span data-quote-target="output"></span>
     </div>-->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+=======
+>>>>>>> 50146e69a170f753e021df092447b20c84c5f499
     <%= yield %>
   </body>
 </html>

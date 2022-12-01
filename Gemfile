@@ -84,3 +84,5 @@ end
 
 gem 'rack-cors'
 gem "faker"
+
+gem 'will_paginate'

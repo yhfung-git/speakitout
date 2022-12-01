@@ -1,4 +1,27 @@
-<%= @user.photo.attached? ? (cl_image_tag @user.photo.key, crop: :fill) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier')) %>
-<h1><%= @user.nickname %></h1>
-<p>Email : <%= @user.email %></p>
-<%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-flat" %>
+<div class="myspace">
+  <%# Profile %>
+  <div class="profile">
+    <h1 style="text-transform:uppercase"><%= @user.nickname %></h1>
+    <%= @user.photo.attached? ? (cl_image_tag @user.photo.key, crop: :fill) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier')) %>
+    <p>First name : <%= @user.first_name %></p>
+    <p>Last name : <%= @user.last_name %></p>
+    <p>Email : <%= @user.email %></p>
+    <p>Bio : <%= @user.bio %></p>
+    <%# <p>Friend</p>
+    <p>Saved Posts</p> %>
+    <%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-ghost" %>
+    <%= link_to "Write your post", new_post_path, class:"btn btn-ghost" %>
+  </div>
+
+  <%# Space %>
+  <div class="space-title">
+    <h1>MY SPACE</h1>
+  </div>
+  <div class="cards">
+    <% @user.posts.each do |post| %>
+      <div class="card-category">
+        <h4><%= post.title %></h4>
+      </div>
+    <% end %>
+  </div>
+</div>
