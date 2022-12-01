@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :reply
+    collection do
+
+    end
   end
 
   resources :articles

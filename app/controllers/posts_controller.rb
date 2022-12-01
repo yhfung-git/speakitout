@@ -21,7 +21,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new
+    @post.title = post_params[:title]
+    @post.content = post_params[:content]
+    @post.private = true if post_params[:private] == "1"
     @post.user = current_user
     if @post.save
       flash[:notice] = "Your post has been saved. Keep being positive"
