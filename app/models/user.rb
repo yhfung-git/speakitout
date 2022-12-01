@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  has_many :articles
-  has_many :messages
-  has_many :replies
-  has_many :posts
+  has_many :articles, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :replies, dependent: :destroy
+  has_many :posts, dependent: :destroy
   has_one_attached :photo
 
   # validates :first_name, :last_name, presence: true

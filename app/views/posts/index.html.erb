@@ -17,6 +17,17 @@
               <p class="mb-0" ><%= post.content %></p>
             </div>
           </div>
+        </div>
+        <div>
+          <div class="text-muted ">
+            <span class="fs-6">Posted by <%= current_user.nickname %></span>
+            <span class="mx-1">·</span>
+            <span><%= time_ago_in_words(post.created_at) %> ago</span>
+          </div>
+          <p class="mb-0 fw-bold fs-5" ><%= post.title %></p>
+          <p class="mb-0" ><%= post.content %></p>
+        </div>
+      </div>
       <% end %>
     <% end %>
     <div class="pagination" id="bottom">

@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import EditController from "./edit_controller"
+application.register("edit", EditController)
+
 import DisplayCardInfosController from "./display_card_infos_controller"
 application.register("display-card-infos", DisplayCardInfosController)
 
@@ -12,3 +15,5 @@ application.register("hello", HelloController)
 
 import { initSortable } from "./init_sortable"
 initSortable()
+import QuoteController from "./quote_controller"
+application.register("quote", QuoteController)
