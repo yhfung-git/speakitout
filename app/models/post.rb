@@ -5,11 +5,13 @@ class Post < ApplicationRecord
   has_many :replies, dependent: :destroy
 
   validates :title, presence: true
-  validates :content, presence: true, length: { minimum: 10 }
+  validates :content, presence: true
 
   pg_search_scope :search_by_title_and_content,
   against: [ :title, :content ],
   using: {
     tsearch: { prefix: true }
   }
+
+  GENRES = ["Supports", "Help", "Resources", "Positive", "Activities", "Share", "Other"]
 end

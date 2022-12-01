@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
 
   def show
+    @replies = Reply.all.where(post_id: @post.id)
+    @reply = Reply.new
   end
 
   def new
@@ -10,18 +12,20 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.where(private: false)
-    @posts = Post.paginate(page: params[:page], per_page: 5)
+    posts = Post.where(private: false)
+    @posts = posts.paginate(page: params[:page], per_page: 5)
     if params[:query].present?
       @posts = @posts.search_by_title_and_content(params[:query])
     else
-      @posts = Post.where(private: false)
-      @posts = Post.paginate(page: params[:page], per_page: 5)
+      @posts = posts.paginate(page: params[:page], per_page: 5)
     end
   end
 
   def create
     @post = Post.new(post_params)
+    # @post.title = post_params[:title]
+    # @post.content = post_params[:content]
+    # @post.private = true if post_params[:private] == "1"
     @post.user = current_user
     if @post.save
       flash[:notice] = "Your post has been saved. Keep being positive"
