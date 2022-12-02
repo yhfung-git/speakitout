@@ -16,5 +16,5 @@ application.register("hello", HelloController)
 import QuoteController from "./quote_controller"
 application.register("quote", QuoteController)
 
-import { initSortable } from "./init_sortable";
-initSortable();
+import SortableController from "./sortable_controller"
+application.register("sortable", SortableController)
