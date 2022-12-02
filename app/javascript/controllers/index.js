@@ -15,6 +15,3 @@ application.register("hello", HelloController)
 
 import QuoteController from "./quote_controller"
 application.register("quote", QuoteController)
-
-import TooltipController from "./tooltip_controller"
-application.register("tooltip", TooltipController)
