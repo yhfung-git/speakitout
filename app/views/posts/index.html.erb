@@ -11,11 +11,11 @@
       <%= link_to post_path(post) do %>
         <div class="d-flex border p-2 rounded-3 mb-3 posts">
           <div class="me-3">
-            <%= current_user.photo.attached? ? (cl_image_tag current_user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
+            <%= post.user.photo.attached? ? (cl_image_tag post.user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
           </div>
           <div>
             <div class="text-muted ">
-              <span class="fs-6">Posted by <%= current_user.nickname %></span>
+              <span class="fs-6">Posted by <%= post.user.nickname %></span>
               <span class="mx-1">·</span>
               <span><%= time_ago_in_words(post.created_at) %> ago</span>
             </div>
