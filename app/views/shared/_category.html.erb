@@ -1,6 +1,11 @@
 <div class="category-container mt-3 mx-1 text-center">
   <%= link_to "Write a post", new_post_path, class:"btn btn-ghost" %>
 
+  <% @posts.each do |post| %>
+    <div>
+      <%= post.category %>
+    </div>
+  <% end %>
   <h3>Category 1</h3>
   <h3>Category 1</h3>
   <h3>Category 1</h3>
