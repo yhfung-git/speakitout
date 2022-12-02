@@ -15,7 +15,7 @@
       <%= link_to article_path(article), class: "text-decoration:none" do %>
       <div class="card-trip-infos" data-display-card-infos-target="card">
         <div class="article-content">
-          <p><%= article.message.truncate(50)%>
+          <p><%= article.message.truncate(60)%>
             <%= link_to article_path(article), class:"click-me" do %>
               <i class="fa-solid fa-circle-plus"></i>
             <% end %>
