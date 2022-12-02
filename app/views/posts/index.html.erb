@@ -33,7 +33,7 @@
   </div>
   <% sorted = sorted.sort_by {|k, v| v}.reverse.to_h.keys.slice(0, 5) %>
   <div class="collection mt-3 mx-1 text-center">
-  <h2>Top 5 collection</h2>
+    <h2>Top <%= sorted.length %> posts</h2>
     <% sorted.each do |post_id| %>
       <h3><%= @posts.where(id: post_id).first.title %></h3>
     <% end %>
