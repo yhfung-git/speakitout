@@ -47,15 +47,28 @@
 
     <div>
       <%# Search %>
-      <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find your positive way"
-        %>
-        <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+      <% if controller_name == "articles" %>
+        <%= form_with url: articles_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search in all Articles"
+          %>
+          <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        <% end %>
+      <% else %>
+        <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search in all Posts"
+          %>
+          <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        <% end %>
       <% end %>
     </div>
   </div>

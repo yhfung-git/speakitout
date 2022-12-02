@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_151057) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_02_103015) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,49 +52,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_151057) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
-  create_table "forum_categories", id: :serial, force: :cascade do |t|
-    t.string "name", null: false
-    t.string "slug", null: false
-    t.string "color", default: "000000"
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
-  end
-
-  create_table "forum_posts", id: :serial, force: :cascade do |t|
-    t.integer "forum_thread_id"
-    t.integer "user_id"
-    t.text "body"
-    t.boolean "solved", default: false
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
-  end
-
-  create_table "forum_subscriptions", id: :serial, force: :cascade do |t|
-    t.integer "forum_thread_id"
-    t.integer "user_id"
-    t.string "subscription_type"
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
-  end
-
-  create_table "forum_threads", id: :serial, force: :cascade do |t|
-    t.integer "forum_category_id"
-    t.integer "user_id"
-    t.string "title", null: false
-    t.string "slug", null: false
-    t.integer "forum_posts_count", default: 0
-    t.boolean "pinned", default: false
-    t.boolean "solved", default: false
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
-  end
-
   create_table "messages", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -111,6 +83,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_151057) do
   create_table "replies", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
+    t.datetime "replied"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -139,12 +112,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_151057) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "users"
-  add_foreign_key "forum_posts", "forum_threads"
-  add_foreign_key "forum_posts", "users"
-  add_foreign_key "forum_subscriptions", "forum_threads"
-  add_foreign_key "forum_subscriptions", "users"
-  add_foreign_key "forum_threads", "forum_categories"
-  add_foreign_key "forum_threads", "users"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "replies", "posts"
