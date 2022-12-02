@@ -31,7 +31,7 @@ puts "Articles destroyed"
 30.times do
   articles = Article.create(
     title: Faker::Lorem.sentence(word_count: 3),
-    message: Faker::Lorem.paragraph_by_chars,
+    message: Faker::Quote.matz,
     url: Faker::LoremFlickr.image,
     user_id: 1
   )
@@ -39,3 +39,18 @@ puts "Articles destroyed"
 end
 
 puts "Articles created"
+
+# # Reply
+# Reply.destroy_all
+# puts "Reply destroyed"
+
+# 30.times do
+#   replies = Reply.create(
+#     content: Faker::Lorem.paragraph_by_chars,
+#     post_id: 1
+#     user_id: 1
+#   )
+#   replies.save!
+# end
+
+# puts "Articles created"
