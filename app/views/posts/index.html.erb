@@ -30,13 +30,14 @@
     </div>
   </div>
 
+
   <div class="collection mt-3 mx-1 text-center">
     <h2>Top 5 collection</h2>
-    <h3>1 collection</h3>
-    <h3>2 collection</h3>
-    <h3>3 collection</h3>
-    <h3>4 collection</h3>
-    <h3>5 collection</h3>
-  </div>
+
+    <% @posts.each do |post| %>
+      <% post.replies.each do |reply| %>
+        <%= reply.content %>
+      <% end %>
+    <% end %>
 
 </div>
