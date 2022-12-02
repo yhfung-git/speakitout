@@ -19,22 +19,22 @@
           </li>
             <li class="nav-item">
               <%= link_to "#", class: "nav-link" do %>
-                <i class="fa-solid fa-comment-dots"></i>
+                <i class="fa-solid fa-comment-dots" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Messages"></i>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to "#", class: "nav-link" do %>
-                <i class="fa-solid fa-bell"></i>
+                <i class="fa-solid fa-bell" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notifications"></i>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to "/articles", class: "nav-link" do %>
-                <i class="fa-solid fa-book"></i>
+                <i class="fa-solid fa-book" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Articles"></i>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to "#", class: "nav-link" do %>
-                <i class="fa-solid fa-circle-info"></i>
+                <i class="fa-solid fa-circle-info" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Guides"></i>
               <% end %>
             </li>
         <% else %>
