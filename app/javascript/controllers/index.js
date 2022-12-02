@@ -4,9 +4,6 @@
 
 import { application } from "./application"
 
-import { initSortable } from "./init_sortable";
-initSortable();
-
 import DisplayCardInfosController from "./display_card_infos_controller"
 application.register("display-card-infos", DisplayCardInfosController)
 
@@ -18,3 +15,6 @@ application.register("hello", HelloController)
 
 import QuoteController from "./quote_controller"
 application.register("quote", QuoteController)
+
+import { initSortable } from "./init_sortable";
+initSortable();

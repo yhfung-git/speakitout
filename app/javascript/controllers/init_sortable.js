@@ -3,7 +3,7 @@ import Sortable from "sortablejs"
 const list = document.querySelector("#myspace-cards")
 
 const initSortable = () => {
-  console.log("connected");
+  console.log("Connected");
   Sortable.create(list, {
     ghostClass: "ghost",
     animation: 150,
