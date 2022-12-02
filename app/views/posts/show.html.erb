@@ -32,7 +32,7 @@
               <%= reply.user.photo.attached? ? (cl_image_tag reply.user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
               <div class="ms-3">
                 <div class="d-flex text-muted">
-                  <span class="d-flex align-items-center"><%= @post.user.nickname %></span>
+                  <span class="d-flex align-items-center"><%= reply.user.nickname %></span>
                   <span class="mx-1">·</span>
                   <span><%= time_ago_in_words(reply.created_at) %> ago</span>
                 </div>
