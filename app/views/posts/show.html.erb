@@ -16,30 +16,32 @@
         </a>
       </div>
     </div>
-    <div class="mt-2 comment-block border">
-      <%= simple_form_for @reply, :url => post_replies_path(params[:id]), :method => :posts do |f| %>
-        <%= f.input_field :content, class: 'form-control border-0 rounded-0' %>
-        <div class="bg-light d-flex justify-content-end comment-tool-bar">
-          <%= f.button :submit, "comment", class: 'p-1 rounded-4 m-1' %>
-        </div>
-      <% end %>
-    </div>
-    <div class="comment-list">
-      <div class="mt-4 pt-4 border-top">
-        <% @replies.each do |reply| %>
-          <div class="d-flex align-content-center mt-3">
-            <%= reply.user.photo.attached? ? (cl_image_tag reply.user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
-            <div class="ms-3">
-              <div class="d-flex text-muted">
-                <span class="d-flex align-items-center"><%= @post.user.nickname %></span>
-                <span class="mx-1">·</span>
-                <span><%= time_ago_in_words(reply.created_at) %> ago</span>
-              </div>
-              <p class="mt-1"> <%= reply.content %> </p>
-            </div>
+    <% if @post.private == false%>
+      <div class="mt-2 comment-block border">
+        <%= simple_form_for @reply, :url => post_replies_path(params[:id]), :method => :posts do |f| %>
+          <%= f.input_field :content, class: 'form-control border-0 rounded-0' %>
+          <div class="bg-light d-flex justify-content-end comment-tool-bar">
+            <%= f.button :submit, "comment", class: 'p-1 rounded-4 m-1' %>
           </div>
         <% end %>
       </div>
-    </div>
+      <div class="comment-list">
+        <div class="mt-4 pt-4 border-top">
+          <% @replies.each do |reply| %>
+            <div class="d-flex align-content-center mt-3">
+              <%= reply.user.photo.attached? ? (cl_image_tag reply.user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
+              <div class="ms-3">
+                <div class="d-flex text-muted">
+                  <span class="d-flex align-items-center"><%= @post.user.nickname %></span>
+                  <span class="mx-1">·</span>
+                  <span><%= time_ago_in_words(reply.created_at) %> ago</span>
+                </div>
+                <p class="mt-1"> <%= reply.content %> </p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
