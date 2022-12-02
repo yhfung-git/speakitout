@@ -10,7 +10,7 @@ export default class extends Controller {
         "X-Api-Key": "",
       },
       contentType: 'application/json',
-    }) 
+    })
       .then(response => response.json())
       .then(data => {
         this.outputTarget.innerHTML = data[0].quote

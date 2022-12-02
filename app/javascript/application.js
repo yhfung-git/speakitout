@@ -2,7 +2,8 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-
+import { initSortable } from "./controllers/init_sortable";
+initSortable();
 // (document).ready( function() {
 //   ('.alert').delay(5000).fadeOut();
 // });
