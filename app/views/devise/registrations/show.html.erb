@@ -14,16 +14,21 @@
   </div>
 
   <%# Space %>
-  <div class="space-title">
-    <h1>MY SPACE</h1>
-  </div>
-  <div class="cards" data-controller="sortable">
-    <% @user.posts.each do |post| %>
-      <%= link_to post_path(post) do %>
-        <div class="card-category">
-          <h4><%= post.title %></h4>
-        </div>
+  <div class="space">
+    <div class="space-title">
+      <div class="title">
+        <span class="title-word title-word-1">MY</span>
+        <span class="title-word title-word-2">SPACE</span>
+      </div>
+    </div>
+    <div class="cards" data-controller="sortable">
+      <% @user.posts.each do |post| %>
+        <%= link_to post_path(post) do %>
+          <div class="card-category">
+            <h4><%= post.title %></h4>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

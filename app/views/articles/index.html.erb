@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="d-flex justify-content-center py-3">
+  <div class="d-flex justify-content-center pt-4">
     <%= link_to "New Article", new_article_path, class:"btn btn-ghost" %>
   </div>
 
@@ -14,8 +14,8 @@
       <%# card infos %>
       <%= link_to article_path(article), class: "text-decoration:none" do %>
       <div class="card-trip-infos" data-display-card-infos-target="card">
-        <div class="article-content">
-          <p><%= article.message.truncate(50)%>
+        <div class="articles-content">
+          <p><%= article.message.truncate(60)%>
             <%= link_to article_path(article), class:"click-me" do %>
               <i class="fa-solid fa-circle-plus"></i>
             <% end %>

@@ -32,8 +32,8 @@
   cursor: pointer;
   border-top-left-radius: 98px;
   border-top-right-radius: 98px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
 }
 
 .display {
@@ -103,12 +103,16 @@
 
 .article-content {
   font-size: 20px;
+}
+
+.articles-content {
+  font-size: 20px;
   color: black;
   display: flex;
   justify-content: center;
 }
 
-.article-content p {
+.articles-content p {
   font-size: 20px;
   color: black;
 }
