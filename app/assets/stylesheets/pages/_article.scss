@@ -68,12 +68,12 @@
   display: none;
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
+// .card-trip-infos .card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
 
 .card-article {
   display: flex;
@@ -93,15 +93,22 @@
 }
 
 .click-me {
-  border: 1px solid black;
   border-radius: 20px;
-  background-color: white;
-  text-align: center;
-  opacity: 0.9;
+  opacity: 0.6;
+  font-size: 17px;
 }
 .click-me:hover {
-  background-color: rgb(0, 255, 17);
-  border: 1px solid rgb(0, 255, 17);
-  font-weight: bold;
   opacity: 1;
+}
+
+.article-content {
+  font-size: 20px;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.article-content p {
+  font-size: 20px;
+  color: black;
 }
