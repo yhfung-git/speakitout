@@ -3,7 +3,14 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
+
     @articles = Article.all
+    @articles = @articles.paginate(page: params[:page], per_page: 5)
+    if params[:query].present?
+      @articles = @articles.search_by_title_and_message(params[:query])
+    else
+      @articles = @articles.paginate(page: params[:page], per_page: 5)
+    end
   end
 
   def new
