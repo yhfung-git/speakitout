@@ -15,7 +15,7 @@
           </div>
           <div>
             <div class="text-muted ">
-              <span class="fs-6">Posted by <%= current_user.nickname %></span>
+              <span class="fs-6">Posted by <%= post.user.nickname %></span>
               <span class="mx-1">·</span>
               <span><%= time_ago_in_words(post.created_at) %> ago</span>
             </div>
