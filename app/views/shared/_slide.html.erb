@@ -16,7 +16,7 @@
         <img src="https://images.unsplash.com/photo-1577563820627-bc12aa2139de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fHNwZWFrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5 style="text-transform: uppercase;"><%= post.title %></h5>
-          <p><%= post.content %></p>
+          <p><%= post.content.truncate(65) %></p>
         </div>
       </div>
     <% end %>
