@@ -1,13 +1,15 @@
+<%# Carousel %>
 <%= render "shared/slide" %>
 
 <div class="container home d-flex justify-content-between">
+  <%# Category %>
   <div>
     <%= render "shared/category" %>
   </div>
 
   <%# Middle Posts %>
   <% sorted = {}%>
-  <div class="container vh-100 flex-grow-1 my-3">
+  <div class="container flex-grow-1 my-3">
     <% @posts.each do |post| %>
       <%= link_to post_path(post) do %>
         <div class="d-flex border p-2 rounded-3 mb-3 posts">
