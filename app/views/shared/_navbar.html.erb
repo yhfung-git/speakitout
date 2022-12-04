@@ -20,12 +20,8 @@
               <i class="fa-solid fa-bell"></i>
             <% end %>
           </li>
-          <li class="nav-item dropdown">
-            <%= current_user.photo.attached? ? ( cl_image_tag current_user.photo.key, :height=>400, :width=>400, crop: :crop, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "MY SPACE", user_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?"}, class: "dropdown-item" %>
-            </div>
+          <li>
+            <%= link_to current_user.photo.attached? ? ( cl_image_tag current_user.photo.key, :height=>400, :width=>400, crop: :crop, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ), user_path %>
           </li>
           <li class="nav-item">
             <%= link_to "/articles", class: "nav-link" do %>
@@ -73,3 +69,12 @@
     </div>
   </div>
 </div>
+
+
+<%# <li class="nav-item dropdown">
+  <%= current_user.photo.attached? ? ( cl_image_tag current_user.photo.key, :height=>400, :width=>400, crop: :crop, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) %>
+  <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+    <%= link_to "MY SPACE", user_path, class: "dropdown-item" %>
+    <%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?"}, class: "dropdown-item" %>
+  <%# </div>
+</li> %>
