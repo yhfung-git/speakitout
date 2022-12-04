@@ -41,3 +41,11 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.alert-dismissible .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1rem 1rem;
+}
