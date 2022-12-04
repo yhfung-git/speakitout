@@ -12,13 +12,24 @@
 
 <!-- Button trigger modal -->
 <% @articles.each do |article| %>
-  <button type="button" class="btn btn-ghost" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    <h1><%= link_to article.title, article_path(article), remote: true %></h1>
+  <button type="button" class="btn btn-ghost">
+  <h1><%= link_to article.title, article_path(article), remote: true %></h1>
   </button>
 <% end %>
 
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<%# Articles %>
 <div class="container">
 
   <div class="d-flex justify-content-center">

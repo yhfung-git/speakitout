@@ -1,2 +1,2 @@
-$('#article-content').html("<%= j render(:partial => "article_coontent") %>");
-$('#staticBackdrop').modal('show');
+$(".modal-content").html("<%= j render "article_content", article: @article %>");
+$('#staticBackdrop').modal("show");
