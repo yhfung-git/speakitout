@@ -8,6 +8,17 @@
   </h2>
 </div>
 
+
+
+<!-- Button trigger modal -->
+<% @articles.each do |article| %>
+  <button type="button" class="btn btn-ghost" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <h1><%= link_to article.title, article_path(article), remote: true %></h1>
+  </button>
+<% end %>
+
+
+
 <div class="container">
 
   <div class="d-flex justify-content-center">
@@ -35,5 +46,7 @@
       <% end %>
     </div>
   <% end %>
-
+    <div class="pagination" id="bottom">
+      <%= will_paginate @articles, :container => false, :params => {:anchor => "bottom"} %>
+    </div>
 </div>
