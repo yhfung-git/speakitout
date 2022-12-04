@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     # @post.private = true if post_params[:private] == "1"
     @post.user = current_user
     if @post.save
-      flash[:notice] = "Your post has been saved. Keep being positive"
+      flash[:notice] = "Your post has been created. Keep being positive"
       redirect_to post_path(@post)
     else
       render 'new', status: :unprocessable_entity
@@ -39,8 +39,8 @@ class PostsController < ApplicationController
   end
 
   def update
+    flash[:notice] = "Your post has been successfully updated."
     if @post.update(post_params)
-      flash.now[:notice] = "Your post has been updated. Keep enjoying your day"
       redirect_to post_path(@post)
     else
       render 'edit', status: :unprocessable_entity
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash.now[:notice] = "Your post has been deleted. If needed, post a new one. Have a nice day"
+    flash[:notice] = "Your post has been successfully deleted."
     redirect_to posts_path
   end
 

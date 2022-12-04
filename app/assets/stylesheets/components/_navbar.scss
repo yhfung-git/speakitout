@@ -20,7 +20,7 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 60px;
-  margin: 0px 0px 0px 20px;
+  margin: 0px 35px 0px 30px;
 }
 
 .navbar-lewagon .nav-item {
@@ -43,12 +43,6 @@
   margin-right: 20px;
 }
 
-.avatar {
-  height: 40px;
-  width: 40px;
-  margin-right: 20px;
-}
-
 .nav-link i {
   font-size: 20px;
   color: #008952
@@ -56,4 +50,15 @@
 
 .nav-link i:hover {
   color: #44eeaa;
+}
+
+.dropdown-item {
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+  color: #008952 !important;
+}
+
+.dropdown-menu-end {
+  right: auto !important;
 }

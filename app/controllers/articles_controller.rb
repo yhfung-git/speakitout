@@ -3,7 +3,6 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
-
     @articles = Article.all
     @articles = @articles.paginate(page: params[:page], per_page: 5)
     if params[:query].present?
@@ -21,6 +20,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
+      flash[:notice] = "Your article has been successfully created."
       redirect_to article_path(@article)
     else
       render "new", status: :unprocessable_entity
@@ -32,6 +32,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
+      flash[:notice] = "Your article has been successfully updated."
       redirect_to article_path(@article)
     else
       render "edit", status: :unprocessable_entity
@@ -43,6 +44,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
+    flash[:notice] = "Your article has been successfully deleted."
     redirect_to articles_path, status: :see_other
   end
 
