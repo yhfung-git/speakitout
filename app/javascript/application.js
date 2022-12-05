@@ -2,6 +2,7 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+
 // (document).ready( function() {
 //   ('.alert').delay(5000).fadeOut();
 // });
