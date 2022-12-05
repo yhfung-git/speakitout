@@ -57,17 +57,15 @@ a {
   animation: seconds 3.0s forwards;
   animation-iteration-count: 1;
   animation-delay: 5s;
-  // position: relative;
-  // background: red;
   position: fixed;
-  top: 69px;
-  right: 185px;
+  top: 14vh;
+  right: 8vh;
   background-color: #008952;
   border-radius: 7px;
   color: aliceblue;
-  width: 70%;
-  height: 18%;
-  z-index: 1;
+  width: 92%;
+  height: 69%;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,6 +73,7 @@ a {
   text-align: center;
   font-weight: bold;
   padding: 0 50px;
+  overflow-wrap: anywhere;
 }
 @-webkit-keyframes seconds {
   0% {
@@ -124,5 +123,59 @@ a {
   100% {
     opacity: 0;
     left: -9999px;
+  }
+}
+
+.marquee::before,
+.marquee::after {
+  // min-width: 200px;
+  // min-height: 100px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fecf02;
+  content: "";
+  box-shadow: inset 0 0 0 4px;
+  animation: marqueeFrame 8s linear infinite;
+}
+
+.marquee::before {
+  animation-delay: -4s;
+}
+
+@keyframes marqueeFrame {
+  0%,
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 4px, 0% 4px);
+  }
+  25% {
+    clip-path: polygon(0% 0%, 4px 0%, 4px 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(
+      0% calc(100% - 4px),
+      100% calc(100% - 4px),
+      100% 100%,
+      0% 100%
+    );
+  }
+  75% {
+    clip-path: polygon(
+      calc(100% - 4px) 4px,
+      100% 4px,
+      100% 100%,
+      calc(100% - 4px) 100%
+    );
+  }
+  76% {
+    clip-path: polygon(
+      calc(100% - 4px) 0,
+      100% 0,
+      100% 100%,
+      calc(100% - 4px) 100%
+    );
   }
 }
