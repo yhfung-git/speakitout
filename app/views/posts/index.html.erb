@@ -23,7 +23,7 @@
               <span><%= time_ago_in_words(post.created_at) %> ago</span>
             </div>
             <p class="mb-0 fw-bold fs-5" ><%= post.title %></p>
-            <p class="mb-0" ><%= post.content %></p>
+            <p class="mb-0" ><%= post.content.truncate(80) %></p>
           </div>
         </div>
         <% sorted[post.id] = post.replies.length %>
