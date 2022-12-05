@@ -1,3 +1,4 @@
+<% conversations = Conversation.all%>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
@@ -6,20 +7,30 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "#", class: "nav-link" do %>
-              <i class="fa-solid fa-comment-dots"></i>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "#", class: "nav-link" do %>
-              <i class="fa-solid fa-bell"></i>
-            <% end %>
-          </li>
+          <div class="dropdown-center">
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-comment-dots"></i>
+              </a>
+              <div class="dropdown-menu" style="width: 500px">
+                <h6 class="dropdown-header">Conversation</h6>
+                <% conversations.each do | conv |%>
+                  <% if conv.sender_id == current_user.id || conv.recipient_id == current_user.id %>
+                    <% if conv.sender_id == current_user.id %>
+                      <% recipient = User.find(conv.recipient_id) %>
+                    <% else %>
+                      <% recipient = User.find(conv.sender_id) %>
+                    <% end %>
+                    <% link_to recipient.nickname, conversation_messages_path(conv), {:class=>'d-flex flex-direction-column p-3 border'} %>
+                        <%= recipient.nickname %>
+                  <% end %>
+                <% end %>
+              </div>
+            </li>
+          </div>
           <li>
             <%= link_to current_user.photo.attached? ? ( cl_image_tag current_user.photo.key, :height=>400, :width=>400, crop: :crop, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ), user_path %>
           </li>
@@ -50,22 +61,22 @@
             class: "form-control",
             placeholder: "Search in all Articles"
           %>
-          <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        <% end %>
-      <% else %>
-        <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search in all Posts"
-          %>
-          <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        <% end %>
+        <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       <% end %>
+    <% else %>
+      <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search in all Posts"
+        %>
+      <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    <% end %>
+  <% end %>
     </div>
   </div>
 </div>
@@ -76,5 +87,5 @@
   <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
     <%= link_to "MY SPACE", user_path, class: "dropdown-item" %>
     <%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?"}, class: "dropdown-item" %>
-  <%# </div>
-</li> %>
+    <%# </div>
+    </li> %>
