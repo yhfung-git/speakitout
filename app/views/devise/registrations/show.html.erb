@@ -12,7 +12,64 @@
     <%= link_to "Write your post", new_post_path, class:"btn btn-ghost" %>
   </div>
 
-  <%# Space %>
+  <%# Spin Wheel %>
+  <div class="spin-wheel" data-controller="spin-wheel">
+    <div>
+      <h1>What is your objective today?</h1>
+      <button id="spin" data-action="click->spin-wheel#spin">Spin</button>
+      <span class="arrow"></span>
+      <div class="wheel" data-spin-wheel-target="container">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+        <div class="seven">7</div>
+        <div class="eight">8</div>
+      </div>
+    </div>
+    <div class="wheel-input">
+      <div class="input-group mb-3">
+        <span class="input-group-text group1">1</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group2">2</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group3">3</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group4">4</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group5">5</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group6">6</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group7">7</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group8">8</span>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+
+  <%# Activities(show in Calender) %>
+  <%# Calender(for wheel) %>
+  <%# Points system %>
+
+  <%# My Space %>
   <div class="space">
     <div class="space-title">
       <div class="title">
@@ -20,33 +77,6 @@
         <span class="title-word title-word-2">SPACE</span>
       </div>
     </div>
-
-<%# Spin Wheel %>
-<div class="spin-wheel" data-controller="spin-wheel">
-  <div>
-    <h1>What is your objectif today?</h1>
-    <button id="spin" data-action="click->spin-wheel#spin">Spin</button>
-    <span class="arrow"></span>
-    <div class="wheel" data-spin-wheel-target="container">
-      <div class="one">1</div>
-      <div class="two">2</div>
-      <div class="three">3</div>
-      <div class="four">4</div>
-      <div class="five">5</div>
-      <div class="six">6</div>
-      <div class="seven">7</div>
-      <div class="eight">8</div>
-    </div>
-  </div>
-  <div>
-    <textarea class="form-control" v-model="items_str"></textarea>
-  </div>
-</div>
-
-  <%# Activities(show in Calender) %>
-  <%# Calender(for wheel) %>
-  <%# Points system %>
-
 
     <div class="cards" data-controller="sortable">
       <% @user.posts.each do |post| %>
