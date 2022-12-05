@@ -27,3 +27,24 @@ a {
   text-decoration: none !important;
   color: inherit !important;
 }
+
+.top {
+  place-self:end;
+  position:sticky;
+  bottom:20px;
+  margin-right:20px;
+  // margin-top:100vh;
+
+  /* visual styling */
+  text-decoration: none;
+  padding: 10px;
+  // font-family: sans-serif;
+  color: #fff !important;
+  background: #008952;
+  border-radius: 100px;
+  white-space:nowrap;
+}
+
+.top:hover {
+  background: #44eda9;
+}
