@@ -4,7 +4,7 @@
 <div class="container home d-flex justify-content-between">
   <%# Category %>
   <div>
-    <%= render "shared/category" %>
+    <%= render "shared/category", form_path: @post, type: "post"%>
   </div>
 
   <%# Middle Posts %>

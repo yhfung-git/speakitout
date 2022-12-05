@@ -1,7 +1,6 @@
 <div class="">
   <div class="article">
-    <%= @article.photo.attached? ? (cl_image_tag @article.photo.key, crop: :fill) : image_tag(asset_path("mirror.jpg")) %>
-    <div class="article-content">
+    <%= @article.photo.attached? ? (cl_image_tag @article.photo.key, crop: :fill) : image_tag(asset_path("mirror.jpg")) %> <div class="article-content">
       <h1 style="text-transform:uppercase"><%= @article.title %></h1>
       <%= link_to edit_article_path(@article) do %>
         <i class="fa-solid fa-pen-to-square"></i>
