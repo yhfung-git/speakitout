@@ -18,3 +18,6 @@ application.register("quote", QuoteController)
 
 import SortableController from "./sortable_controller"
 application.register("sortable", SortableController)
+
+import SpinWheelController from "./spin_wheel_controller"
+application.register("spin-wheel", SpinWheelController)
