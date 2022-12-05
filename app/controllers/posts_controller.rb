@@ -7,11 +7,8 @@ class PostsController < ApplicationController
     @reply = Reply.new
   end
 
-  def new
-    @post = Post.new
-  end
-
   def index
+    @post = Post.new
     posts = Post.where(private: false)
     @posts = posts.paginate(page: params[:page], per_page: 5)
     if params[:query].present?
