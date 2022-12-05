@@ -1,0 +1,25 @@
+<% conversations = Conversation.all%>
+<div class="messages-container rounded-bottom rounded-4 border">
+  <div class="menu">
+    <% conversations.each do | conv |%>
+      <% if conv.sender_id == current_user.id || conv.recipient_id == current_user.id %>
+        <% if conv.sender_id == current_user.id %>
+          <% recipient = User.find(conv.recipient_id) %>
+        <% else %>
+          <% recipient = User.find(conv.sender_id) %>
+        <% end %>
+        <%= link_to conversation_messages_path(conv), remote: true do %>
+          <div class="user">
+            <p><%= recipient.nickname %></p>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <div class="user">
+    </div>
+  </div>
+  <div class="conversation">
+  </div>
+</div>
+
+

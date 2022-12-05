@@ -12,23 +12,9 @@
         <% if user_signed_in? %>
           <div class="dropdown-center">
             <li class="nav-item">
-              <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="" class="nav-link" data-controller="messages" data-action="click->messages#activate">
                 <i class="fa-solid fa-comment-dots"></i>
               </a>
-              <div class="dropdown-menu" style="width: 500px">
-                <h6 class="dropdown-header">Conversation</h6>
-                <% conversations.each do | conv |%>
-                  <% if conv.sender_id == current_user.id || conv.recipient_id == current_user.id %>
-                    <% if conv.sender_id == current_user.id %>
-                      <% recipient = User.find(conv.recipient_id) %>
-                    <% else %>
-                      <% recipient = User.find(conv.sender_id) %>
-                    <% end %>
-                    <% link_to recipient.nickname, conversation_messages_path(conv), {:class=>'d-flex flex-direction-column p-3 border'} %>
-                        <%= recipient.nickname %>
-                  <% end %>
-                <% end %>
-              </div>
             </li>
           </div>
           <li>
@@ -81,6 +67,7 @@
   </div>
 </div>
 
+<%= render "shared/messages" %>
 
 <%# <li class="nav-item dropdown">
   <%= current_user.photo.attached? ? ( cl_image_tag current_user.photo.key, :height=>400, :width=>400, crop: :crop, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) %>
@@ -89,3 +76,24 @@
     <%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?"}, class: "dropdown-item" %>
     <%# </div>
     </li> %>
+
+
+
+
+
+
+<!--
+  <div class="dropdown-menu" style="width: 500px">
+    <h6 class="dropdown-header">Conversation</h6>
+    <% conversations.each do | conv |%>
+      <% if conv.sender_id == current_user.id || conv.recipient_id == current_user.id %>
+        <% if conv.sender_id == current_user.id %>
+          <% recipient = User.find(conv.recipient_id) %>
+        <% else %>
+          <% recipient = User.find(conv.sender_id) %>
+        <% end %>
+        <% link_to recipient.nickname, conversation_messages_path(conv), {:class=>'d-flex flex-direction-column p-3 border'} %>
+        <% recipient.nickname %>
+      <% end %>
+    <% end %>
+  </div> -->

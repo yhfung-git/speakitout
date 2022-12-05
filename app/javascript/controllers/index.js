@@ -13,6 +13,9 @@ application.register("edit", EditController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import MessagesController from "./messages_controller"
+application.register("messages", MessagesController)
+
 import QuoteController from "./quote_controller"
 application.register("quote", QuoteController)
 
