@@ -65,10 +65,6 @@
     </div>
   </div>
 
-  <%# Activities(show in Calender) %>
-  <%# Calender(for wheel) %>
-  <%# Points system %>
-
   <%# My Space %>
   <div class="space">
     <div class="space-title">
@@ -82,7 +78,7 @@
       <% @user.posts.each do |post| %>
         <%= link_to post_path(post) do %>
           <div class="card-category">
-            <h4><%= post.title %></h4>
+            <h4><%= post.title.truncate(50) %></h4>
           </div>
         <% end %>
       <% end %>

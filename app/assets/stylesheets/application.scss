@@ -48,3 +48,81 @@ a {
 .top:hover {
   background: #44eda9;
 }
+
+// Quote
+.quote {
+  -webkit-animation: seconds 3.0s forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 5s;
+  animation: seconds 3.0s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 5s;
+  // position: relative;
+  // background: red;
+  position: fixed;
+  top: 69px;
+  right: 185px;
+  background-color: #008952;
+  border-radius: 7px;
+  color: aliceblue;
+  width: 70%;
+  height: 18%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem !important;
+  text-align: center;
+  font-weight: bold;
+  padding: 0 50px;
+}
+@-webkit-keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.6;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.4;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.2;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.6;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.4;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.2;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}

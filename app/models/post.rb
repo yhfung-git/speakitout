@@ -13,5 +13,5 @@ class Post < ApplicationRecord
     tsearch: { prefix: true }
   }
 
-  GENRES = ["Supports", "Help", "Resources", "Positive", "Activities", "Share", "Other"]
+  GENRES = ["Supports", "Help", "Resources", "Positive", "Activities", "Share", "Chat", "Other"]
 end
