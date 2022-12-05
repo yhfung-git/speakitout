@@ -14,8 +14,6 @@ export default class extends Controller {
     number += Math.ceil(Math.random() * 1000);
   }
 }
-
-
 // let container = document.querySelector(".spin-wheel");
 // let btn = document.getElementById("spin");
 // let number = Math.ceil(Math.random() * 1000);

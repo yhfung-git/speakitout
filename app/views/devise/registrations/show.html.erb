@@ -23,18 +23,23 @@
 
 <%# Spin Wheel %>
 <div class="spin-wheel" data-controller="spin-wheel">
-  <h1>What is your objectif today?</h1>
-  <button id="spin" data-action="click->spin-wheel#spin">Spin</button>
-  <span class="arrow"></span>
-  <div class="wheel" data-spin-wheel-target="container">
-    <div class="one">1</div>
-    <div class="two">2</div>
-    <div class="three">3</div>
-    <div class="four">4</div>
-    <div class="five">5</div>
-    <div class="six">6</div>
-    <div class="seven">7</div>
-    <div class="eight">8</div>
+  <div>
+    <h1>What is your objectif today?</h1>
+    <button id="spin" data-action="click->spin-wheel#spin">Spin</button>
+    <span class="arrow"></span>
+    <div class="wheel" data-spin-wheel-target="container">
+      <div class="one">1</div>
+      <div class="two">2</div>
+      <div class="three">3</div>
+      <div class="four">4</div>
+      <div class="five">5</div>
+      <div class="six">6</div>
+      <div class="seven">7</div>
+      <div class="eight">8</div>
+    </div>
+  </div>
+  <div>
+    <textarea class="form-control" v-model="items_str"></textarea>
   </div>
 </div>
 
