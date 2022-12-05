@@ -7,10 +7,10 @@ export default class extends Controller {
     fetch("https://api.api-ninjas.com/v1/quotes?category=happiness", {
       method: "GET",
       headers: {
-        "X-Api-Key": "",
+        "X-Api-Key": "ZyMq5ZcYVZPJfue2i/i2CA==67SAwCkNEVE339ow",
       },
       contentType: 'application/json',
-    }) 
+    })
       .then(response => response.json())
       .then(data => {
         this.outputTarget.innerHTML = data[0].quote
