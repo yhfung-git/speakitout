@@ -1,12 +1,15 @@
 <%# Carousel %>
 <%= render "shared/slide" %>
 
+<%# Button Trigger Modal %>
+<div>
+  <%= render "shared/modal_new", form_path: @post, type: "post"%>
+</div>
+
 <div class="container home d-flex justify-content-between">
   <%# Category %>
-  <div>
-    <%= render "shared/category", form_path: @post, type: "post"%>
-  </div>
-
+  <%= render "shared/category" %>
+  
   <%# Middle Posts %>
   <% sorted = {}%>
   <div class="container flex-grow-1 my-3">
@@ -24,6 +27,9 @@
             </div>
             <p class="mb-0 fw-bold fs-5" ><%= post.title %></p>
             <p class="mb-0" ><%= post.content.truncate(80) %></p>
+          </div>
+          <div class="post-category">
+            <span><%= post.category %></span>
           </div>
         </div>
         <% sorted[post.id] = post.replies.length %>
