@@ -14,13 +14,6 @@ import "bootstrap"
 //         $(".alert").fadeOut()
 //       setTimeout flashCallback, 3000
 
-
-
-
-
-
-
-
 // $(document).ready(function() {
 //   $("#success-alert").hide();
 //   $("#post").click(function showAlert() {

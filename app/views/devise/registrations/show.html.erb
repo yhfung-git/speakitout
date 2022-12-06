@@ -1,3 +1,8 @@
+<%# Quote %>
+<div data-controller="quote" class="quote marquee">
+  <span data-quote-target="output"></span>
+</div>
+
 <div class="myspace">
   <%# Profile %>
   <div class="profile">
@@ -32,42 +37,38 @@
     <div class="wheel-input">
       <div class="input-group mb-3">
         <span class="input-group-text group1">1</span>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" value="Create a motivational post">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group2">2</span>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" value="Share an article you think it's helpful">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group3">3</span>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" value="Help at least 5 peoples">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group4">4</span>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" value="Participate in at least one activity of the week">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group5">5</span>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" value="Join a chat room">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group6">6</span>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" value="Listen to a motivational speech">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group7">7</span>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" value="Talk to your friends and your family">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group8">8</span>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" value="Play a sport">
       </div>
     </div>
   </div>
-
-  <%# Activities(show in Calender) %>
-  <%# Calender(for wheel) %>
-  <%# Points system %>
 
   <%# My Space %>
   <div class="space">
@@ -82,7 +83,7 @@
       <% @user.posts.each do |post| %>
         <%= link_to post_path(post) do %>
           <div class="card-category">
-            <h4><%= post.title %></h4>
+            <h4><%= post.title.truncate(50) %></h4>
           </div>
         <% end %>
       <% end %>
