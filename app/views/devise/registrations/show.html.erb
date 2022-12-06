@@ -1,7 +1,7 @@
 <%# Quote %>
-<div data-controller="quote" class="quote marquee">
+<%# <div data-controller="quote" class="quote marquee">
   <span data-quote-target="output"></span>
-</div>
+</div> %>
 
 <div class="myspace">
   <%# Profile %>
@@ -24,48 +24,64 @@
       <button id="spin" data-action="click->spin-wheel#spin">Spin</button>
       <span class="arrow"></span>
       <div class="wheel" data-spin-wheel-target="container">
-        <div class="one">1</div>
-        <div class="two">2</div>
-        <div class="three">3</div>
-        <div class="four">4</div>
-        <div class="five">5</div>
-        <div class="six">6</div>
-        <div class="seven">7</div>
-        <div class="eight">8</div>
+        <div class="one" id="one" >
+          <p data-spin-wheel-target="insert1" >1</p>
+        </div>
+        <div class="two" id="two">
+          <p data-spin-wheel-target="insert2">2</p>
+        </div>
+        <div class="three" id="three">
+          <p data-spin-wheel-target="insert3">3</p>
+        </div>
+        <div class="four" id="four">
+          <p data-spin-wheel-target="insert4">4</p>
+        </div>
+        <div class="five" id="five">
+          <p data-spin-wheel-target="insert5">5</p>
+        </div>
+        <div class="six" id="six" >
+          <p data-spin-wheel-target="insert6">6</p>
+        </div>
+        <div class="seven" id="seven" >
+          <p data-spin-wheel-target="insert7">7</p>
+        </div>
+        <div class="eight" id="eight">
+          <p data-spin-wheel-target="insert8">8</p>
+        </div>
       </div>
     </div>
     <div class="wheel-input">
       <div class="input-group mb-3">
         <span class="input-group-text group1">1</span>
-        <input type="text" class="form-control" value="Create a motivational post">
+        <input type="text" id="one" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input1" value="Create a motivational post">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group2">2</span>
-        <input type="text" class="form-control" value="Share an article you think it's helpful">
+        <input type="text" id="two" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input2" value="Share an article you think it's helpful">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group3">3</span>
-        <input type="text" class="form-control" value="Help at least 5 peoples">
+        <input type="text" id="three" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input3" value="Help at least 5 peoples">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group4">4</span>
-        <input type="text" class="form-control" value="Participate in at least one activity of the week">
+        <input type="text" id="four" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input4" value="Participate in at least one activity of the week">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group5">5</span>
-        <input type="text" class="form-control" value="Join a chat room">
+        <input type="text" id="five" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input5" value="Join a chat room">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group6">6</span>
-        <input type="text" class="form-control" value="Listen to a motivational speech">
+        <input type="text" id="six" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input6" value="Listen to a motivational speech">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group7">7</span>
-        <input type="text" class="form-control" value="Talk to your friends and your family">
+        <input type="text" id="seven" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input7" value="Talk to your friends and your family">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text group8">8</span>
-        <input type="text" class="form-control" value="Play a sport">
+        <input type="text" id="eight" class="form-control "data-action="input->spin-wheel#update" data-spin-wheel-target="input8" value="Play a sport">
       </div>
     </div>
   </div>
