@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "output" ]
+  static targets = [ "output", "close" ]
 
   connect() {
     fetch("https://api.api-ninjas.com/v1/quotes?category=happiness", {
@@ -16,5 +16,9 @@ export default class extends Controller {
         this.outputTarget.innerHTML = data[0].quote
       })
       .catch(error => console.log(error))
+  }
+
+  close() {
+    this.closeTarget.classList.add("d-none")
   }
 }

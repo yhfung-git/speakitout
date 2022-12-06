@@ -1,5 +1,6 @@
 <%# Quote %>
-<div data-controller="quote" class="quote marquee">
+<div data-controller="quote" class="quote marquee alert-dismissible" data-quote-target="close">
+  <button type="button" class="btn-close" aria-label="Close data-bs-dismiss="quote" data-action="click->quote#close"></button>
   <span data-quote-target="output"></span>
 </div>
 
