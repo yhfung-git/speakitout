@@ -17,6 +17,10 @@ class MessagesController < ApplicationController
       @messages.last.read = true if @messages.last.user_id != current_user.id
     end
     @message = @conversation.messages.new
+    respond_to do |format|
+      format.html
+      format.json { render json: @messages }
+    end
   end
 
   def new
@@ -33,6 +37,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:body, :user_id)
+    params.permit(:body, :user_id)
   end
 end

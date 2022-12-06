@@ -1,7 +1,7 @@
 // _navbar.html.erb
 // Author: dhalley <dhalley@mail.com>
 // Created: 2022-12-05 19:00:37
-// Updated: 2022-12-05 19:30:57 by dhalley
+// Updated: 2022-12-06 16:00:20 by dhalley
 
 .messages-container {
   height: 500px;
@@ -24,10 +24,16 @@
       width: 100%;
       height: 10%;
     }
+    .user:hover {
+      background-color: #F5F5F5;
+    }
   }
 
   .conversation {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex-grow: 1;
   }
 }

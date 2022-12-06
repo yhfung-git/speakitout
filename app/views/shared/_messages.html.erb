@@ -1,6 +1,9 @@
 <% conversations = Conversation.all%>
-<div class="messages-container rounded-bottom rounded-4 border">
-  <div class="menu">
+<div class="messages-container rounded-bottom rounded-4 border" style="overflow: hidden; visibility: hidden;" data-controller="insert" data-user="<%= current_user.id %>" >
+  <div class="menu" >
+    <div class="user border-bottom text-bg-secondary">
+      Conversations
+    </div>
     <% conversations.each do | conv |%>
       <% if conv.sender_id == current_user.id || conv.recipient_id == current_user.id %>
         <% if conv.sender_id == current_user.id %>
@@ -8,17 +11,22 @@
         <% else %>
           <% recipient = User.find(conv.sender_id) %>
         <% end %>
-        <%= link_to conversation_messages_path(conv), remote: true do %>
-          <div class="user">
+        <%= link_to conversation_messages_path(conv), data: {insert_target: "link", action: "click->insert#send", test: conv.id } do %>
+          <div class="user border-bottom" data-test="<%= conv.id %>">
             <p><%= recipient.nickname %></p>
           </div>
         <% end %>
       <% end %>
     <% end %>
-    <div class="user">
-    </div>
   </div>
-  <div class="conversation">
+  <div class="conversation" >
+    <div data-insert-target="output" style="width: 80%; height: fit-content;">
+    </div>
+    <form data-insert-target="form" method="post" style="height: 20px; width: 80%">
+      <input type="text" name="body" style="width: 100%; height: 100%">
+      <input value="1" type="hidden" name="user_id" data-insert-target="input">
+      <input type="submit" value="Send" style="width: 100%; height: 100%">
+    </form>
   </div>
 </div>
 

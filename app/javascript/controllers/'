@@ -1,0 +1,22 @@
+import { Controller } from "@hotwired/stimulus"
+
+// Connects to data-controller="insert"
+export default class extends Controller {
+  static targets = [ "messages", "link" ]
+  connect() {
+  }
+
+  send(event) {
+    event.preventDefault();
+    console.log(this.linkTargets);
+    /*fetch(this.linkTarget.href, {
+    })
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error)
+    })*/
+  }
+}
