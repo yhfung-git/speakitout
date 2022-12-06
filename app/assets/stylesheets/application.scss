@@ -179,3 +179,23 @@ a {
     );
   }
 }
+
+.tab h1 {
+  color: #008952;
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-weight: bold;
+  background-size: 100px;
+  padding-top: 10px;
+  // background: radial-gradient(#008952, transparent);
+  font-family: "Montserrat", sans-serif;
+  font-size: 5vw;
+  text-transform: uppercase;
+  // background:
+  //   linear-gradient(
+  //     270deg,
+  //     #ffdefb,
+  //     #ffffcd,
+  //     #ffc4cf,
+  //     #fffad1);
+}

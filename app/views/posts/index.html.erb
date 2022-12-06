@@ -1,11 +1,14 @@
 <%# Carousel %>
 <%= render "shared/slide" %>
 
+<%# Button Trigger Modal %>
+<div>
+  <%= render "shared/modal_new", form_path: @post, type: "post"%>
+</div>
+
 <div class="container home d-flex justify-content-between">
   <%# Category %>
-  <div>
-    <%= render "shared/category", form_path: @post, type: "post"%>
-  </div>
+  <%# <%= render "shared/category" %>
 
   <%# Middle Posts %>
   <% sorted = {}%>
@@ -24,6 +27,9 @@
             </div>
             <p class="mb-0 fw-bold fs-5" ><%= post.title %></p>
             <p class="mb-0" ><%= post.content.truncate(80) %></p>
+          </div>
+          <div class="post-category">
+            <span><%= post.category %></span>
           </div>
         </div>
         <% sorted[post.id] = post.replies.length %>
@@ -59,7 +65,7 @@
       <td class="time">10.00</td>
       <td></td>
       <td class="md303 navy">Let's Meet Up<br><a href="#"><i class="fa-solid fa-person-walking"></i></a></td>
-      <td class="md313 newblue">Join us for a chat!<br><a href="http://localhost:3000/posts/145"><i class="fa-solid fa-person-walking"></i></a></td>
+      <td class="md313 newblue">Share your ideas!<br><a href="http://localhost:3000/posts/145"><i class="fa-solid fa-person-walking"></i></a></td>
       <td>-</td>
     </tr>
     <tr>
@@ -73,7 +79,7 @@
       <td class="time">12.00</td>
       <td></td>
       <td class="md303 navy">Walking Tour<br><a href="#"><i class="fa-solid fa-person-walking"></i></a></td>
-      <td class="md313 newblue">Doctor's Speech<br><a href="#"><i class="fa-solid fa-person-walking"></i></a></td>
+      <td class="md313 newblue">Motivational Speech<br><a href="#"><i class="fa-solid fa-person-walking"></i></a></td>
       <td></td>
       <td>-</td>
     </tr>
@@ -89,9 +95,9 @@
       <td class="time">14.00</td>
       <td></td>
       <td></td>
-      <td class="cs426 purple">Mediation part 2<br><a href="#"><i class="fa-solid fa-person-walking"></i></a></td>
-      <td class="cs240 orange" rowspan="3">Afternoon Chat<br><a href="http://localhost:3000/posts/146"><i class="fa-solid fa-person-walking"></i></a></td>
-      <td>-</td>
+      <td class="cs426 purple">Meditation part 2<br><a href="#"><i class="fa-solid fa-person-walking"></i></a></td>
+      <td></td>
+      <td class="cs240 orange" rowspan="4">Afternoon Chat<br><a href="http://localhost:3000/posts/146"><i class="fa-solid fa-person-walking"></i></a></td>
     </tr>
     <tr>
       <td class="time">15.00</td>
@@ -110,7 +116,6 @@
     <tr>
       <td class="time">17.00</td>
       <td class="cs335 green">Yoga<br><a href="#"><i class="fa-solid fa-person-walking"></i></a></td>
-      <td></td>
       <td></td>
       <td></td>
       <td>-</td>

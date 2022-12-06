@@ -65,42 +65,74 @@
 .wheel .one{
 	background-color: #3f51b5;
 	left:50%;
-  font-size: 50px;
+  font-size: 16px;
+  p {
+    rotate: -90deg;
+    padding-left: 70px;
+  }
 }
 .wheel .two{
 	background-color: #ff9800;
 	transform: rotate(45deg);
-  font-size: 50px;
+  font-size: 16px;
+  p {
+    rotate: -90deg;
+    padding-left: 70px;
+  }
 }
 .wheel .three{
 	background-color: #e91e63;
 	transform:rotate(90deg);
-  font-size: 50px;
+  font-size: 16px;
+  p {
+    rotate: -90deg;
+    padding-left: 70px;
+  }
 }
 .wheel .four{
 	background-color: #4caf50;
 	transform: rotate(135deg);
-  font-size: 50px;
+  font-size: 16px;
+  p {
+    rotate: -90deg;
+    padding-left: 70px;
+  }
 }
 .wheel .five{
 	background-color: #009688;
 	transform: rotate(180deg);
-  font-size: 50px;
+  font-size: 16px;
+  p {
+    rotate: -90deg;
+    padding-left: 70px;
+  }
 }
 .wheel .six{
 	background-color: #795548;
 	transform: rotate(225deg);
-  font-size: 50px;
+  font-size: 16px;
+  p {
+    rotate: -90deg;
+    padding-left: 70px;
+  }
 }
 .wheel .seven{
 	background-color: #9c27b0;
 	transform: rotate(270deg);
-  font-size: 50px;
+  font-size: 16px;
+  p {
+    rotate: -90deg;
+    padding-left: 70px;
+  }
 }
 .wheel .eight{
 	background-color: #f44336;
 	transform: rotate(315deg);
-  font-size: 50px;
+  font-size: 16px;
+  p {
+    rotate: -90deg;
+    padding-left: 70px;
+  }
 }
 
 .arrow{
@@ -135,6 +167,12 @@
 	cursor: pointer;
 	outline:none;
 	letter-spacing: 1px;
+  color: white;
+  background: grey;
+}
+
+#spin:hover {
+  background-color: #008952;
 }
 
 .group1 {
