@@ -1,47 +1,6 @@
-<div class="category-container mt-3 mx-1 text-center">
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-ghost" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    <% if type == "post"%>
-      Write a post
-    <% else %>
-      New Article
-    <% end %>
-  </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog forms mx-auto my-3">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <%= simple_form_for(form_path) do |f| %>
-            <%= f.input :title, placeholder: "Enter the title" %>
-            <% if type == "post" %>
-              <%= f.input :content, placeholder: "Content" %>
-              <%= f.input :category, collection: Post::GENRES %>
-              <%= f.input :private, type:"checkbox", label:"Only My Space" %>
-            <% else %> 
-              <%= f.input :message, label: "Content", placeholder: "Content" %>
-              <%= f.input :url, label: "Article's URL", placeholder: "Enter the url" %>
-              <%= f.input :photo, as: :file %>
-            <% end %>
-            <div class="d-flex justify-content-around">
-              <%= f.submit value: "Post", class: "btn btn-ghost" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <%# <h3>Category 1</h3>
-    <h3>Category 1</h3>
-  <h3>Category 1</h3>
-  <h3>Category 1</h3>
-  <h3>Category 1</h3>
-  <h3>Category 1</h3>
-  <h3>Category 1</h3> %>
+<div class="container">
+  <h1>Categories</h1>
+  <% @posts.each do |post| %>
+    <h3><%= post.category %></h3>
+  <% end %>
 </div>
