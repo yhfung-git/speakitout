@@ -28,7 +28,7 @@
     <% if @post.private == false%>
       <div class="mt-2 comment-block border">
         <%= simple_form_for @reply, :url => post_replies_path(params[:id]), :method => :posts do |f| %>
-          <%= f.input_field :content, class: 'form-control border-0 rounded-0' %>
+          <%= f.input_field :content, class: 'form-control border-0 rounded-0', style: '-webkit-box-shadow: none' %>
           <div class="bg-light d-flex justify-content-end comment-tool-bar">
             <%= f.button :submit, "comment", class: 'p-1 rounded-4 m-1' %>
           </div>
