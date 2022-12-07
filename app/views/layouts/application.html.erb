@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Speakitout · Speak it out will make you feel better</title>
+    <title>Speakitout | Speak it out will make you feel better</title>
 
-    <title><%= meta_title %></title>
-    <meta name="description" content="<%= meta_description %>">
+
+    <meta name="viewport" content="width=divice-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Facebook Open Graph data -->
-    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:title" content="Spe@kitOut | Speak it out will make you feel better" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="<%= request.original_url %>" />
-    <meta property="og:description" content="<%= meta_description %>" />
-    <meta property="og:site_name" content="<%= meta_title %>" />
+    <meta property="og:url" content="https://www.speakitout.help" />
+    <meta property="og:image" content="https://res.cloudinary.com/dqknqmpbm/image/upload/v1670422795/logo_athart.png"/>
+    <meta property="og:description" content="Feeling down? visit at Spe@kitOut and talk to us!" />
+    <meta property="og:site_name" content="Speakitout" />
 
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
-    <meta name="twitter:title" content="<%= meta_title %>">
-    <meta name="twitter:description" content="<%= meta_description %>">
-    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
