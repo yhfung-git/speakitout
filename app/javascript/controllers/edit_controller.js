@@ -11,7 +11,7 @@ export default class extends Controller {
   replace() {
     if (this.contentTarget.innerText) {
       let content = this.contentTarget.innerText
-      this.contentTarget.innerHTML=`<form method='put' action='${window.location.pathname}' ><textarea style='height: ${this.contentTarget.offsetHeight}px'class="form-edit" data-edit-target='form' name="post[content]"></textarea><input type="submit" value="confirm"/>`
+      this.contentTarget.innerHTML=`<form method='put' action='${window.location.pathname}' ><textarea style='text-align:center; height: ${this.contentTarget.offsetHeight}px'class="form-edit" data-edit-target='form' name="post[content]"></textarea><input type="submit" value="confirm" class="btn btn-ghost"/>`
       this.formTarget.addEventListener('input', autoResize);
       this.formTarget.value = content
       function autoResize() {
@@ -22,4 +22,3 @@ export default class extends Controller {
     }
   }
 }
-

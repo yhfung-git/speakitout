@@ -1,4 +1,10 @@
 .alert {
+  -webkit-animation: seconds 2.0s forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 3s;
+  animation: seconds 2.0s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 3s;
   position: fixed;
   bottom: 20px;
   right: 50px;
@@ -12,8 +18,59 @@
   align-items: center;
   justify-content: center;
   font-size: 1.1rem !important;
-  }
+  padding: 0;
+}
 
+@-webkit-keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.6;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.4;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.2;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.6;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.4;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0.2;
+    left: -9999px;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}
 
 
 // .flash {

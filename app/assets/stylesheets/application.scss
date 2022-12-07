@@ -51,15 +51,15 @@ a {
 
 // Quote
 .quote {
-  -webkit-animation: seconds 2.0s forwards;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-delay: 5s;
-  animation: seconds 2.0s forwards;
-  animation-iteration-count: 1;
-  animation-delay: 5s;
+  // -webkit-animation: seconds 2.0s forwards;
+  // -webkit-animation-iteration-count: 1;
+  // -webkit-animation-delay: 5s;
+  // animation: seconds 2.0s forwards;
+  // animation-iteration-count: 1;
+  // animation-delay: 5s;
   position: fixed;
-  top: 14vh;
-  right: 8vh;
+  top: 14%;
+  left: 4%;
   background-color: #008952;
   border-radius: 7px;
   color: aliceblue;
@@ -75,56 +75,56 @@ a {
   padding: 0 50px;
   overflow-wrap: anywhere;
 }
-@-webkit-keyframes seconds {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.8;
-    left: -9999px;
-  }
-  100% {
-    opacity: 0.6;
-    left: -9999px;
-  }
-  100% {
-    opacity: 0.4;
-    left: -9999px;
-  }
-  100% {
-    opacity: 0.2;
-    left: -9999px;
-  }
-  100% {
-    opacity: 0;
-    left: -9999px;
-  }
-}
-@keyframes seconds {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.8;
-    left: -9999px;
-  }
-  100% {
-    opacity: 0.6;
-    left: -9999px;
-  }
-  100% {
-    opacity: 0.4;
-    left: -9999px;
-  }
-  100% {
-    opacity: 0.2;
-    left: -9999px;
-  }
-  100% {
-    opacity: 0;
-    left: -9999px;
-  }
-}
+// @-webkit-keyframes seconds {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0.8;
+//     left: -9999px;
+//   }
+//   100% {
+//     opacity: 0.6;
+//     left: -9999px;
+//   }
+//   100% {
+//     opacity: 0.4;
+//     left: -9999px;
+//   }
+//   100% {
+//     opacity: 0.2;
+//     left: -9999px;
+//   }
+//   100% {
+//     opacity: 0;
+//     left: -9999px;
+//   }
+// }
+// @keyframes seconds {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0.8;
+//     left: -9999px;
+//   }
+//   100% {
+//     opacity: 0.6;
+//     left: -9999px;
+//   }
+//   100% {
+//     opacity: 0.4;
+//     left: -9999px;
+//   }
+//   100% {
+//     opacity: 0.2;
+//     left: -9999px;
+//   }
+//   100% {
+//     opacity: 0;
+//     left: -9999px;
+//   }
+// }
 
 .marquee::before,
 .marquee::after {
