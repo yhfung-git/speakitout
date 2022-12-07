@@ -2,56 +2,59 @@
 <% content_for :meta_description, @post.content %>
 
 
-<div class="container rounded-3 border new-post d-flex justify-content-center" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-  <div class="col-11 py-3">
-    <div class="d-flex align-content-center" style="justify-content: space-between;">
-      <div>
-        <%= @post.user.photo.attached? ? (cl_image_tag @post.user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0 show-post-avatar") %>
-        <span class="ms-3 d-flex align-items-center text-muted">Posted by <%= @post.user.nickname %> </span>
+<div class="d-flex justify-content-center">
+  <div class="container rounded-3 border new-post d-flex justify-content-center" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+    <div class="col-11 py-3">
+      <div class="d-flex align-content-center" style="justify-content: space-between;">
+        <div>
+          <%= @post.user.photo.attached? ? (cl_image_tag @post.user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0 show-post-avatar") %>
+          <span class="ms-3 d-flex align-items-center text-muted">Posted by <%= @post.user.nickname %> </span>
+        </div>
+        <div>
+          <span class="post-category"><%= @post.category %></span>
+        </div>
       </div>
-      <div>
-        <span class="post-category"><%= @post.category %></span>
+      <div class="mt-3" data-controller="edit">
+        <p class="fw-bold d-flex justify-content-center mb-3" style="font-size:25px;"> <%= @post.title %> </p>
+        <p class="mt-1 text-content" data-edit-target="content" style="white-space: pre-wrap; display:flex; justify-content:center; text-align:center"> <%= @post.content %> </p>
+        <div class="tool-bar mt-3" style="color:#008952" >
+          <%= link_to post_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@post.title} ?"} do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
+          <a style="cursor: pointer;" data-action="click->edit#replace">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="mt-3" data-controller="edit">
-      <p class="fw-bold d-flex justify-content-center mb-3" style="font-size:25px;"> <%= @post.title %> </p>
-      <p class="mt-1 text-content" data-edit-target="content" style="white-space: pre-wrap; display:flex; justify-content:center; text-align:center"> <%= @post.content %> </p>
-      <div class="tool-bar mt-3" style="color:#008952" >
-        <%= link_to post_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@post.title} ?"} do %>
-          <i class="fa-solid fa-trash"></i>
-        <% end %>
-        <a style="cursor: pointer;" data-action="click->edit#replace">
-          <i class="fa-solid fa-pen-to-square"></i>
-        </a>
-      </div>
-    </div>
-    <% if @post.private == false%>
-      <div class="mt-2 comment-block border">
-        <%= simple_form_for @reply, :url => post_replies_path(params[:id]), :method => :posts do |f| %>
-          <%= f.input_field :content, class: 'form-control border-0 rounded-0', style: '-webkit-box-shadow: none' %>
-          <div class="bg-light d-flex justify-content-end comment-tool-bar">
-            <%= f.button :submit, "comment", class: 'p-1 rounded-4 m-1' %>
-          </div>
-        <% end %>
-      </div>
-      <div class="comment-list">
-        <div class="mt-4 pt-4 border-top">
-          <% @replies.each do |reply| %>
-            <div class="d-flex align-content-center mt-3">
-              <%= reply.user.photo.attached? ? (cl_image_tag reply.user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
-              <div class="ms-3">
-                <div class="d-flex text-muted">
-                  <span class="d-flex align-items-center"><%= reply.user.nickname %></span>
-                  <span class="mx-1">·</span>
-                  <span><%= time_ago_in_words(reply.created_at) %> ago</span>
-                </div>
-                <p class="mt-1"> <%= reply.content %> </p>
-              </div>
+      <% if @post.private == false%>
+        <div class="mt-2 comment-block border">
+          <%= simple_form_for @reply, :url => post_replies_path(params[:id]), :method => :posts do |f| %>
+            <%= f.input_field :content, class: 'form-control border-0 rounded-0', style: '-webkit-box-shadow: none' %>
+            <div class="bg-light d-flex justify-content-end comment-tool-bar">
+              <%= f.button :submit, "comment", class: 'p-1 rounded-4 m-1' %>
             </div>
           <% end %>
         </div>
-      </div>
-    <% else %>
-    <% end %>
+        <div class="comment-list">
+          <div class="mt-4 pt-4 border-top">
+            <% @replies.each do |reply| %>
+              <div class="d-flex align-content-center mt-3">
+                <%= reply.user.photo.attached? ? (cl_image_tag reply.user.photo.key, crop: :fill, class: "rounded-circle avatar me-0") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "rounded-circle avatar me-0") %>
+                <div class="ms-3">
+                  <div class="d-flex text-muted">
+                    <span class="d-flex align-items-center"><%= reply.user.nickname %></span>
+                    <span class="mx-1">·</span>
+                    <span><%= time_ago_in_words(reply.created_at) %> ago</span>
+                  </div>
+                  <p class="mt-1"> <%= reply.content %> </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+      <% end %>
+    </div>
   </div>
+
 </div>
