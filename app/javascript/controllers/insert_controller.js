@@ -1,15 +1,31 @@
 import { Controller } from "@hotwired/stimulus"
 
+let data
+
 // Connects to data-controller="insert"
 export default class extends Controller {
   static targets = [ "output", "link", "form", "input" ]
 
   connect() {
+    this.formTarget.addEventListener("submit", (event) => {
+      setTimeout(() => {
+      this.send(event)
+      }, 250)
+    })
   }
 
   send(event) {
     event.preventDefault();
-    fetch(`http://localhost:3000/conversations/${event.target.parentElement.dataset.test}/messages`, {
+    console.log(event.target.parentElement)
+    let x = event.target.parentElement.dataset.test
+    if (typeof x == 'string') {
+      data = x
+    }
+    else {
+      x = data
+    }
+    console.log(x)
+    fetch(`http://localhost:3000/conversations/${x}/messages`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -18,6 +34,7 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
+        console.log(data)
         this.setMessages(data);
       })
       .catch((error) => {
@@ -27,8 +44,8 @@ export default class extends Controller {
 
   setMessages(data) {
     this.outputTarget.innerHTML = "";
-    for (let i = 0; i < data.length - 1; i++) {
-      console.log(data[i])
+    console.log(this.outputTarget.innerHTML)
+    for (let i = 0; i < data.length; i++) {
       if (this.element.dataset.user == data[i].user_id) {
         this.outputTarget.insertAdjacentHTML('beforeend', `<div class="border rounded-4 my-3 ms-auto px-2" style="width: fit-content; background-color: #32D25A"><p style="display: inline-block; color: white">${data[i].body}</p></div>`)
       }
