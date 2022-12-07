@@ -2,6 +2,7 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+
 // (document).ready( function() {
 //   ('.alert').delay(5000).fadeOut();
 // });
@@ -12,13 +13,6 @@ import "bootstrap"
 //       $(".alert").bind 'click', (ev) =>
 //         $(".alert").fadeOut()
 //       setTimeout flashCallback, 3000
-
-
-
-
-
-
-
 
 // $(document).ready(function() {
 //   $("#success-alert").hide();

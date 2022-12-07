@@ -1,3 +1,9 @@
+<%# Quote %>
+<div data-controller="quote" class="quote marquee alert-dismissible" data-quote-target="close">
+  <button type="button" class="btn-close" aria-label="Close data-bs-dismiss="quote" data-action="click->quote#close"></button>
+  <span data-quote-target="output"></span>
+</div>
+
 <div class="myspace">
   <%# Profile %>
   <div class="profile">
@@ -12,7 +18,76 @@
     <%= link_to "Write your post", new_post_path, class:"btn btn-ghost" %>
   </div>
 
-  <%# Space %>
+  <%# Spin Wheel %>
+  <div class="spin-wheel" data-controller="spin-wheel">
+    <div>
+      <h1>What is your objective today?</h1>
+      <button id="spin" data-action="click->spin-wheel#spin">Spin</button>
+      <span class="arrow"></span>
+      <div class="wheel" data-spin-wheel-target="container">
+        <div class="one" id="one" >
+          <p data-spin-wheel-target="insert1" >Create a motivational post</p>
+        </div>
+        <div class="two" id="two">
+          <p data-spin-wheel-target="insert2">Share an article you think it's helpful</p>
+        </div>
+        <div class="three" id="three">
+          <p data-spin-wheel-target="insert3">Help at least 5 peoples</p>
+        </div>
+        <div class="four" id="four">
+          <p data-spin-wheel-target="insert4">Participate in at least one activity of the week</p>
+        </div>
+        <div class="five" id="five">
+          <p data-spin-wheel-target="insert5">Join a chat room</p>
+        </div>
+        <div class="six" id="six" >
+          <p data-spin-wheel-target="insert6">Listen to a motivational speech</p>
+        </div>
+        <div class="seven" id="seven" >
+          <p data-spin-wheel-target="insert7">Talk to your friends and your family</p>
+        </div>
+        <div class="eight" id="eight">
+          <p data-spin-wheel-target="insert8">Play a sport</p>
+        </div>
+      </div>
+    </div>
+    <div class="wheel-input">
+      <div class="input-group mb-3">
+        <span class="input-group-text group1">1</span>
+        <input type="text" id="one" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input1" value="Create a motivational post">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group2">2</span>
+        <input type="text" id="two" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input2" value="Share an article you think it's helpful">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group3">3</span>
+        <input type="text" id="three" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input3" value="Help at least 5 peoples">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group4">4</span>
+        <input type="text" id="four" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input4" value="Participate in at least one activity of the week">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group5">5</span>
+        <input type="text" id="five" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input5" value="Join a chat room">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group6">6</span>
+        <input type="text" id="six" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input6" value="Listen to a motivational speech">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group7">7</span>
+        <input type="text" id="seven" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input7" value="Talk to your friends and your family">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text group8">8</span>
+        <input type="text" id="eight" class="form-control "data-action="input->spin-wheel#update" data-spin-wheel-target="input8" value="Play a sport">
+      </div>
+    </div>
+  </div>
+
+  <%# My Space %>
   <div class="space">
     <div class="space-title">
       <div class="title">
@@ -21,24 +96,11 @@
       </div>
     </div>
 
-  <div class="d-flex justify-content-center">
-    Spin a wheel
-  </div>
-  <div class="d-flex justify-content-center">
-    Activities(show in Calender)
-  </div>
-  <div class="d-flex justify-content-center">
-    Points system
-  </div>
-  <div class="d-flex justify-content-center">
-    Calender(for wheel)
-  </div>
-
     <div class="cards" data-controller="sortable">
       <% @user.posts.each do |post| %>
         <%= link_to post_path(post) do %>
           <div class="card-category">
-            <h4><%= post.title %></h4>
+            <h4><%= post.title.truncate(50) %></h4>
           </div>
         <% end %>
       <% end %>

@@ -1,0 +1,78 @@
+
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+ .green {
+	 background: #2a9d8f;
+}
+ .purple {
+	 background: #b5179e;
+}
+ .navy {
+	 background: #fb8b24;
+}
+ .newblue {
+	 background: #1d3557;
+}
+ .orange {
+	 background: #e63946;
+}
+ .cs335, .cs426, .md303, .md352, .md313, .cs240 {
+	 font-weight: 500;
+	 cursor: pointer;
+}
+//  body {
+// 	 background: #e74c3c;
+// 	 padding: 20px;
+// }
+ *, *:before, *:after {
+	 margin: 0;
+	 padding: 0;
+	 border: 0;
+	 outline: 0;
+	 box-sizing: border-box;
+}
+ table {
+	 font-family: 'Open Sans', Helvetica;
+	 color: #efefef;
+   border-spacing: 0;
+   border: 1px solid black;
+   margin-left: 50px;
+   margin-top: 40px;
+}
+table th{
+  border-left: 1px solid #ccc;
+}
+ table tr:nth-child(2n) {
+	 background: #eff0f1;
+
+}
+ table tr:nth-child(2n+3) {
+	 background: #fff;
+}
+.cs335 blue lab{
+  border: 1px solid black;
+}
+ table th, table td {
+	 padding: 20px;
+	 width: 12em;
+   text-align: center;
+   border: 1px solid black;
+}
+ .days, .time {
+	 background: #008952;
+	 text-transform: uppercase;
+	 font-size: 0.8em;
+	 text-align: center;
+}
+ .time {
+	 width: 1em;
+
+}
+.days{
+  border-right: 1px solid #ccc;
+}
+a{
+  color: white;
+}
+a:hover{
+  color: black;
+}

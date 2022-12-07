@@ -1,0 +1,56 @@
+// /users/hc3y/code/d4v1dh/speakitout/app/assets/stylesheets/application.scss
+// Author: dhalley <dhalley@mail.com>
+// Created: 2022-11-29 16:18:13
+// Updated: 2022-12-01 15:52:12 by dhalley
+p {
+  margin: 0;
+}
+
+body {
+  background-color: #dae0e6;
+  .posts {
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .new-post {
+    background-color: #ffffff;
+    width: 100%;
+    margin: 40px;
+  }
+  .comment-block {
+    min-height: 100px;
+    width: 100%;
+    textarea {
+      background-color: #ffffff;
+      resize: none;
+      width: 100%;
+      height: 100%;
+    }
+    textarea:focus {
+      background-color: #ffffff;
+      outline: none;
+    }
+    .comment-tool-bar {
+      background-color: #f6f7f8;
+      input {
+        background-color: #008952 !important;
+        font-size: 13px;
+        color: white !important;
+        font-weight: bold;
+      }
+
+      input:hover {
+        background-color: #44eeaa !important;
+      }
+    }
+  }
+}
+
+.form-edit {
+  resize: none;
+  width: 100%;
+}
+
+.tool-bar a:hover {
+  color: #44eeaa !important;
+}
