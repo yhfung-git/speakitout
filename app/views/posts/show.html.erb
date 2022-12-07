@@ -1,3 +1,8 @@
+<% content_for :meta_title, "#{@post.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @post.description %>
+<% content_for :meta_image, cl_image_path(@post.photo.path) %>
+
+
 <div class="container rounded-3 border new-post d-flex justify-content-center" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
   <div class="col-11 py-3">
     <div class="d-flex align-content-center" style="justify-content: space-between;">
