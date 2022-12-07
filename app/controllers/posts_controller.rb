@@ -37,11 +37,8 @@ class PostsController < ApplicationController
 
   def update
     flash[:notice] = "Your post has been successfully updated."
-    if @post.update(post_params)
-      redirect_to post_path(@post)
-    else
-      render 'edit', status: :unprocessable_entity
-    end
+    @post.update(post_params)
+    redirect_to post_path(@post)
   end
 
   def destroy
