@@ -135,18 +135,28 @@
   }
 }
 
-.arrow{
-	position: absolute;
-	top: -6px;
+// .arrow{
+// 	position: absolute;
+// 	top: -6px;
+//   left: 23%;
+// 	transform: translateX(-50%);
+// 	color:#fff;
+// }
+
+// .arrow::before{
+// 	content:"\1F817";
+// 	font-size:90px;
+// }
+
+.triangle {
+  position: absolute;
+	top: 0px;
   left: 23%;
 	transform: translateX(-50%);
-	color:#fff;
+	color:#DDDDEE;
+  font-size: 90px;
 }
 
-.arrow::before{
-	content:"\1F817";
-	font-size:90px;
-}
 
 #spin{
 	position: absolute;
