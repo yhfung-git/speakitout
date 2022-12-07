@@ -1,7 +1,7 @@
 // /users/hc3y/code/d4v1dh/speakitout/app/assets/stylesheets/application.scss
 // Author: dhalley <dhalley@mail.com>
 // Created: 2022-11-29 16:18:13
-// Updated: 2022-12-05 11:00:00 by dhalley
+// Updated: 2022-12-05 19:13:46 by dhalley
 p {
   margin: 0;
 }
@@ -10,6 +10,7 @@ body {
   background-color: #dae0e6;
   .posts {
     background-color: #ffffff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     div:nth-child(2) {
       width: 90%;
       p {
