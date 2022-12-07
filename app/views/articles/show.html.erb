@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@article.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @article.description %>
+<% content_for :meta_image, cl_image_path(@article.photo.path) %>
+
 <div class="">
   <div class="article">
     <%= @article.photo.attached? ? (cl_image_tag @article.photo.key, crop: :fill) : image_tag(asset_path("mirror.jpg")) %> <div class="article-content">
