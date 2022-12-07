@@ -6,19 +6,13 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "#", class: "nav-link" do %>
+          <li class="nav-item" data-controller="hide">
+            <a href="" class="nav-link" data-action="click->hide#activate">
               <i class="fa-solid fa-comment-dots"></i>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "#", class: "nav-link" do %>
-              <i class="fa-solid fa-bell"></i>
-            <% end %>
+            </a>
           </li>
           <li>
             <%= link_to current_user.photo.attached? ? ( cl_image_tag current_user.photo.key, :height=>400, :width=>400, crop: :crop, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ), user_path %>
@@ -50,31 +44,36 @@
             class: "form-control",
             placeholder: "Search in all Articles"
           %>
-          <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        <% end %>
-      <% else %>
-        <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search in all Posts"
-          %>
-          <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        <% end %>
+        <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       <% end %>
+    <% else %>
+      <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search in all Posts"
+        %>
+      <button type="submit" class="btn btn-ghost rounded-0 rounded-end ">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    <% end %>
+  <% end %>
     </div>
   </div>
 </div>
-
+<% if user_signed_in? %>
+  <% conversations = Conversation.all%>
+  <%= render "shared/messages" %>
+<% else %>
+<% end %>
 
 <%# <li class="nav-item dropdown">
   <%= current_user.photo.attached? ? ( cl_image_tag current_user.photo.key, :height=>400, :width=>400, crop: :crop, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false ) %>
   <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
     <%= link_to "MY SPACE", user_path, class: "dropdown-item" %>
     <%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?"}, class: "dropdown-item" %>
-  <%# </div>
-</li> %>
+    <%# </div>
+    </li> %>
+
