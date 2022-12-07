@@ -11,23 +11,25 @@
         <% else %>
           <% recipient = User.find(conv.sender_id) %>
         <% end %>
-        <%= link_to conversation_messages_path(conv), data: {insert_target: "link", action: "click->insert#send", test: conv.id } do %>
-          <div class="user border-bottom" data-test="<%= conv.id %>">
+        <%= link_to conversation_messages_path(conv), data: {insert_target: "link", action: "click->insert#send", conv: conv.id } do %>
+          <div class="user border-bottom" data-conv="<%= conv.id %>">
             <p><%= recipient.nickname %></p>
           </div>
         <% end %>
       <% end %>
     <% end %>
   </div>
-  <div class="conversation">
+  <div class="conversation d-flex flex-column mb-5">
     <div data-insert-target="output" style="width: 80%; height: fit-content;">
     </div>
-    <form data-insert-target="form" method="post" style="height: 20px; width: 80%">
-      <input type="text" name="body" style="width: 100%; height: 100%">
-      <input value="1" type="hidden" name="user_id" data-insert-target="input">
-      <input type="submit" value="Send" style="width: 100%; height: 100%">
-    </form>
+    <div style="height: 200px; width: 80%" data-insert-target="form_container">
+    </div>
   </div>
 </div>
 
-
+<!--
+      <form data-insert-target="form" method="post" style="height: 20px;">
+        <input type="text" name="body" data-insert-target="text" class="border border-2 px-2">
+        <input value="1" type="hidden" name="user_id" data-insert-target="input">
+        <input type="submit" value="Send" style="width: 100%; height: fit-content">
+      </form> -->
