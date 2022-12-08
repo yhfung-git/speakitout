@@ -5,10 +5,6 @@ class MessagesController < ApplicationController
 
   def index
     @messages = @conversation.messages.sort
-    if @messages.length > 10
-      @over_ten = true
-      @messages = @messages[-10..-1].sort
-    end
     @message = @conversation.messages.new
     respond_to do |format|
       format.html
