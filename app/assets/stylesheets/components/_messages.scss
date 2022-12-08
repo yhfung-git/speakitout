@@ -25,7 +25,9 @@
       height: 10%;
     }
     .user:hover {
-      background-color: #F5F5F5;
+      background-color: #44eeaa;
+      color: white;
+      font-weight: bold ;
     }
   }
 
@@ -39,5 +41,13 @@
       width: 100%;
       height: 100%;
     }
+  }
+
+  .chat {
+    background-color: #008952 !important;
+  }
+
+  .submit:hover {
+    background-color: #44eeaa !important;
   }
 }
