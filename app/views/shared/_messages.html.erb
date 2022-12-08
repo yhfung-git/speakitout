@@ -1,7 +1,7 @@
 <% conversations = Conversation.all%>
 <div class="messages-container rounded-bottom rounded-4 border" style="overflow: hidden; visibility: hidden;" data-controller="insert" data-user="<%= current_user.id %>" >
   <div class="menu" >
-    <div class="user border-bottom text-bg-secondary">
+    <div class="user border-bottom text-bg-secondary chat">
       Conversations
     </div>
     <% conversations.each do | conv |%>
