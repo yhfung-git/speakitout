@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
 
   def show
-    @replies = Reply.all.where(post_id: @post.id)
+    @replies = Reply.all.where(post_id: @post.id).order(id: :desc)
     @reply = Reply.new
   end
 
