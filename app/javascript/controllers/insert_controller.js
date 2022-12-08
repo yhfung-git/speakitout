@@ -27,7 +27,25 @@ export default class extends Controller {
     else {
       x = data
     }
-    fetch(`http://localhost:3000/conversations/${x}/messages`, {
+    /*ajax ({
+      url: `/activities/${x}/mark_as_read`,
+      type: 'put'
+    });*/
+
+    fetch(`conversations/${x}/mark_as_read`, {
+      method: 'PUT',
+      parameters: { id: x },
+    })
+    .then(response => response.json())
+    .then((data) => {
+      console.log("test")
+      console.log(data)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+    fetch(`conversations/${x}/messages`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

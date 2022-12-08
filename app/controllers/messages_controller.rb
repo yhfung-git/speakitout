@@ -29,11 +29,8 @@ class MessagesController < ApplicationController
 
   def create
     @message = @conversation.messages.new(message_params)
-    if @message.save
-    end
+    @message.save
   end
-
-  private
 
   def message_params
     params.permit(:body, :user_id)

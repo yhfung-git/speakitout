@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :messages
   end
 
+  put 'conversations/:id/mark_as_read', to: 'conversations#mark_as_read', as: 'mark_as_read'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
