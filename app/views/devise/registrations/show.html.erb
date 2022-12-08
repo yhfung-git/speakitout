@@ -7,15 +7,23 @@
 <div class="myspace">
   <%# Profile %>
   <div class="profile">
-    <h1 style="text-transform:uppercase"><%= @user.nickname %></h1>
-    <%= @user.photo.attached? ? (cl_image_tag @user.photo.key, crop: :fill) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier')) %>
-    <h4><%= @user.first_name %></h4>
-    <h4 style="text-transform:uppercase"><%= @user.last_name %></h4>
-    <p>Email : <%= @user.email %></p>
-    <p>Bio : <%= @user.bio %></p>
-    <%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-ghost" %>
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?"}, class: "btn btn-ghost" %>
-    <%= link_to "Write your post", new_post_path, class:"btn btn-ghost" %>
+    <div style="padding: 60px 0;">
+      <h1 style="text-transform:uppercase; font-weight: bold;"><%= @user.nickname %></h1>
+      <%= @user.photo.attached? ? (cl_image_tag @user.photo.key, crop: :fill) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier')) %>
+    </div>
+    <div style="padding: 88Px 0;" class="d-flex flex-column justify-content-between">
+      <div>
+        <h4><%= @user.first_name %></h4>
+        <h4 style="text-transform:uppercase;"><%= @user.last_name %></h4>
+        <p>Email : <%= @user.email %></p>
+        <p>Bio : <%= @user.bio %></p>
+      </div>
+      <div>
+        <%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-ghost" %>
+        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to log out?"}, class: "btn btn-ghost" %>
+        <%= link_to "Write your post", new_post_path, class:"btn btn-ghost" %>
+      </div>
+    </div>
   </div>
 
   <%# Spin Wheel %>
