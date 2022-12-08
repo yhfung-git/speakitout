@@ -17,7 +17,7 @@ class ConversationsController < ApplicationController
   end
 
   def mark_as_read
-    @conversation.where(read_parmas).first.messages.update_all(read: true)
+   Conversation.where(read_params).first.messages.where.not(user_id: current_user.id).update_all(read: true)
   end
 
   private

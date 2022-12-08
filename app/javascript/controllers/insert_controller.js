@@ -27,23 +27,17 @@ export default class extends Controller {
     else {
       x = data
     }
-    /*ajax ({
-      url: `/activities/${x}/mark_as_read`,
-      type: 'put'
-    });*/
 
     fetch(`conversations/${x}/mark_as_read`, {
-      method: 'PUT',
+      method: 'GET',
       parameters: { id: x },
     })
-    .then(response => response.json())
-    .then((data) => {
-      console.log("test")
-      console.log(data)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      })
+      .catch((error) => {
+      })
 
     fetch(`conversations/${x}/messages`, {
       method: 'GET',
@@ -62,6 +56,9 @@ export default class extends Controller {
   }
 
   setMessages(data) {
+    data.sort(function(a, b) { 
+      return a.id - b.id  ||  a.name.localeCompare(b.name);
+    });
     this.outputTarget.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
       if (data[i].id !== null) {
@@ -75,11 +72,11 @@ export default class extends Controller {
     }
     let form = `
       <form action="http://localhost:3000/conversations/${data[0].conversation_id}/messages" data-insert-target="form" method="post" style="height: 20px;">
-        <input type="text" name="body" class="border border-2 px-2" data-insert-target="text">
-        <input value="${this.element.dataset.user}" type="hidden" name="user_id">
-        <input type="submit" value="Send" style="width: 100%; height: fit-content">
+      <input type="text" name="body" class="border border-2 px-2" data-insert-target="text">
+      <input value="${this.element.dataset.user}" type="hidden" name="user_id">
+      <input type="submit" value="Send" style="width: 100%; height: fit-content">
       </form>
-    `
+      `
     if (this.form_containerTarget.innerHTML == "\n    ") {
       this.form_containerTarget.insertAdjacentHTML('beforeend', form)
       this.selectForm();

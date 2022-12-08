@@ -20,69 +20,71 @@
 
   <%# Spin Wheel %>
   <div class="spin-wheel" data-controller="spin-wheel">
-    <div>
-      <h1>What is your objective today?</h1>
-      <span class="triangle"><i class="fa-solid fa-caret-down"></i></span>
+    <div class="caret d-flex flex-column justify-content-center position-relative">
+      <i class="triangle fa-solid fa-caret-down"></i>
       <div class="wheel" data-spin-wheel-target="container">
         <button id="spin" data-action="click->spin-wheel#spin">Spin</button>
         <div class="one" id="one" >
           <p data-spin-wheel-target="insert1" >Partagez un article que vous aimez</p>
         </div>
-        <div class="two" id="two">
-          <p data-spin-wheel-target="insert2">Sortez chez vous et prenez de l'air</p>
-        </div>
-        <div class="three" id="three">
-          <p data-spin-wheel-target="insert3">Répondez à au moins 3 posts pour les aider</p>
-        </div>
-        <div class="four" id="four">
-          <p data-spin-wheel-target="insert4">Participez à au moins 1 activité de la semaine</p>
-        </div>
-        <div class="five" id="five">
-          <p data-spin-wheel-target="insert5">Rejoignez une salle de chat</p>
-        </div>
-        <div class="six" id="six" >
-          <p data-spin-wheel-target="insert6">Écoutez à un discours de motivation</p>
-        </div>
-        <div class="seven" id="seven" >
-          <p data-spin-wheel-target="insert7">Parlez à vos amis ou votre famille</p>
-        </div>
-        <div class="eight" id="eight">
-          <p data-spin-wheel-target="insert8">Faites du sport</p>
-        </div>
+          <div class="two" id="two">
+            <p data-spin-wheel-target="insert2">Sortez chez vous et prenez de l'air</p>
+          </div>
+          <div class="three" id="three">
+            <p data-spin-wheel-target="insert3">Répondez à au moins 3 posts pour les aider</p>
+          </div>
+          <div class="four" id="four">
+            <p data-spin-wheel-target="insert4">Participez à au moins 1 activité de la semaine</p>
+          </div>
+          <div class="five" id="five">
+            <p data-spin-wheel-target="insert5">Rejoignez une salle de chat</p>
+          </div>
+          <div class="six" id="six" >
+            <p data-spin-wheel-target="insert6">Écoutez à un discours de motivation</p>
+          </div>
+          <div class="seven" id="seven" >
+            <p data-spin-wheel-target="insert7">Parlez à vos amis ou votre famille</p>
+          </div>
+          <div class="eight" id="eight">
+            <p data-spin-wheel-target="insert8">Faites du sport</p>
+          </div>
       </div>
     </div>
-    <div class="wheel-input">
-      <div class="input-group mb-3">
-        <span class="input-group-text group1">1</span>
-        <input type="text" id="one" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input1" value="Partagez un article que vous aimez">
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text group2">2</span>
-        <input type="text" id="two" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input2" value="Sortez chez vous et prenez de l'air">
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text group3">3</span>
-        <input type="text" id="three" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input3" value="Répondez à au moins 3 posts pour les aider">
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text group4">4</span>
-        <input type="text" id="four" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input4" value="Participez à au moins 1 activité de la semaine">
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text group5">5</span>
-        <input type="text" id="five" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input5" value="Rejoignez une salle de chat">
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text group6">6</span>
-        <input type="text" id="six" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input6" value="Écoutez à un discours de motivation">
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text group7">7</span>
-        <input type="text" id="seven" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input7" value="Parlez à vos amis ou votre famille">
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text group8">8</span>
-        <input type="text" id="eight" class="form-control "data-action="input->spin-wheel#update" data-spin-wheel-target="input8" value="Faites du sport">
+    <div class="test d-flex flex-column align-items-center justify-content-around">
+      <h1>What is your objective today ?</h1>
+      <div class="wheel-input">
+        <div class="input-group mb-3">
+          <span class="input-group-text group1">1</span>
+          <input type="text" id="one" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input1" value="Partagez un article que vous aimez">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text group2">2</span>
+          <input type="text" id="two" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input2" value="Sortez chez vous et prenez de l'air">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text group3">3</span>
+          <input type="text" id="three" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input3" value="Répondez à au moins 3 posts pour les aider">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text group4">4</span>
+          <input type="text" id="four" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input4" value="Participez à au moins 1 activité de la semaine">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text group5">5</span>
+          <input type="text" id="five" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input5" value="Rejoignez une salle de chat">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text group6">6</span>
+          <input type="text" id="six" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input6" value="Écoutez à un discours de motivation">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text group7">7</span>
+          <input type="text" id="seven" class="form-control" data-action="input->spin-wheel#update" data-spin-wheel-target="input7" value="Parlez à vos amis ou votre famille">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text group8">8</span>
+          <input type="text" id="eight" class="form-control "data-action="input->spin-wheel#update" data-spin-wheel-target="input8" value="Faites du sport">
+        </div>
       </div>
     </div>
   </div>

@@ -9,13 +9,6 @@ class MessagesController < ApplicationController
       @over_ten = true
       @messages = @messages[-10..-1]
     end
-    if params[:m]
-      @over_ten = false
-      @messages = @conversation.messages
-    end
-    if @messages.last
-      @messages.last.read = true if @messages.last.user_id != current_user.id
-    end
     @message = @conversation.messages.new
     respond_to do |format|
       format.html
@@ -33,6 +26,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.permit(:body, :user_id)
+    params.permit(:body, :user_id, :conversation_id)
   end
 end

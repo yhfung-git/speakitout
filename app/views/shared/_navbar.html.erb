@@ -2,9 +2,11 @@
   <% unread_counter = 0 %>
   <% user_conversation = Conversation.where("sender_id = ? OR recipient_id = ?", current_user.id, current_user.id) %>
   <% user_conversation.each do |conv| %>
-    <% message = Message.where(conversation_id: conv.id).last %>
-    <% if message.read == false %>
-      <% unread_counter += 1 %>
+    <% messages = conv.messages.where.not(user_id: current_user.id) %>
+    <% messages.each do |message| %>
+      <% if message.read == false %>
+        <% unread_counter += 1 %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
@@ -25,9 +27,12 @@
           </li>
           <li class="nav-item" data-controller="hide">
             <a href="" class="nav-link position-relative" data-action="click->hide#activate">
-              <span class="notification position-absolute translate-middle badge rounded-pill bg-danger">
-                <%= unread_counter %>
-              </span>
+              <% if unread_counter > 0 %>
+                <span class="notification position-absolute translate-middle badge rounded-pill bg-danger">
+                  <%= unread_counter %>
+                </span>
+              <% else %>
+              <% end %>
               <i class="fa-solid fa-comment-dots"></i>
             </a>
           </li>

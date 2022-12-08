@@ -2,6 +2,11 @@
 	box-sizing:border-box;
 }
 
+.caret{
+  width: 500px;
+  height: 100%;
+}
+
 .spin-wheel{
 	margin:0;
   padding: 44px 30px;
@@ -9,16 +14,15 @@
 	display:flex;
 	align-items:center;
 	// justify-content: center;
-	height:100%;
+	height: 700px;
   // width: 50%;
 	overflow:hidden;
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .spin-wheel h1 {
-  position: absolute;
 	top:50px;
 	left:50%;
 	// transform: translateX(-50%);
@@ -40,8 +44,13 @@
 }
 
 .wheel-input {
-  margin-top: 100px;
-  margin-right: 235px;
+  width: 460px;
+}
+
+.test {
+  width: 600px;
+  height: 100%;
+
 }
 
 .wheel div{
@@ -151,7 +160,7 @@
 .triangle {
   position: absolute;
 	top: 0px;
-  left: 24%;
+  left: 50%;
 	transform: translateX(-50%);
 	color:white;
   font-size: 90px;
@@ -220,5 +229,5 @@
 }
 
 .input-group {
-  width: 170%;
+  width: 100%;
 }
