@@ -64,6 +64,12 @@
   right: auto !important;
 }
 
+.notification {
+  font-size: 10px !important;
+  left: 85% !important;
+  z-index: 10;
+}
+
 /* Add this attribute to the element that needs a tooltip */
 // [data-tooltip] {
 //   position: relative;

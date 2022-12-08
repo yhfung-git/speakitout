@@ -27,7 +27,19 @@ export default class extends Controller {
     else {
       x = data
     }
-    fetch(`http://localhost:3000/conversations/${x}/messages`, {
+
+    fetch(`conversations/${x}/mark_as_read`, {
+      method: 'GET',
+      parameters: { id: x },
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      })
+      .catch((error) => {
+      })
+
+    fetch(`conversations/${x}/messages`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -44,6 +56,9 @@ export default class extends Controller {
   }
 
   setMessages(data) {
+    data.sort(function(a, b) { 
+      return a.id - b.id  ||  a.name.localeCompare(b.name);
+    });
     this.outputTarget.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
       if (data[i].id !== null) {
@@ -61,7 +76,7 @@ export default class extends Controller {
         <input value="${this.element.dataset.user}" type="hidden" name="user_id">
         <input type="submit" value="Send" class="submit" style="width: 100%; height: fit-content; background-color: #008952; color: white;">
       </form>
-    `
+      `
     if (this.form_containerTarget.innerHTML == "\n    ") {
       this.form_containerTarget.insertAdjacentHTML('beforeend', form)
       this.selectForm();

@@ -1,7 +1,15 @@
-<%# user_conversation = Conversation.where("sender_id = ? OR recipient_id = ?", current_user.id, current_user.id) %>
-<%# conversations.each do |conversation| %>
-
-
+<% if user_signed_in? %>
+  <% unread_counter = 0 %>
+  <% user_conversation = Conversation.where("sender_id = ? OR recipient_id = ?", current_user.id, current_user.id) %>
+  <% user_conversation.each do |conv| %>
+    <% messages = conv.messages.where.not(user_id: current_user.id) %>
+    <% messages.each do |message| %>
+      <% if message.read == false %>
+        <% unread_counter += 1 %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
@@ -18,7 +26,13 @@
             <%= link_to current_user.photo.attached? ? ( cl_image_tag current_user.photo.key, :height=>400, :width=>400, crop: :crop, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ), user_path %>
           </li>
           <li class="nav-item" data-controller="hide">
-            <a href="" class="nav-link" data-action="click->hide#activate">
+            <a href="" class="nav-link position-relative" data-action="click->hide#activate">
+              <% if unread_counter > 0 %>
+                <span class="notification position-absolute translate-middle badge rounded-pill bg-danger">
+                  <%= unread_counter %>
+                </span>
+              <% else %>
+              <% end %>
               <i class="fa-solid fa-comment-dots"></i>
             </a>
           </li>
