@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    posts = Post.where(private: false).sort
+    posts = Post.where(private: false).order(id: :desc)
     raise
     @posts = posts.paginate(page: params[:page], per_page: 5)
     if params[:query].present?
