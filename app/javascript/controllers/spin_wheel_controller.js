@@ -9,9 +9,9 @@ export default class extends Controller {
   }
 
   spin () {
-    let number = Math.ceil(Math.random() * 5000);
+    let number = Math.ceil(Math.random() * 6000);
     this.containerTarget.style.transform = "rotate(" + number + "deg)";
-    number += Math.ceil(Math.random() * 5000);
+    number += Math.ceil(Math.random() * 6000);
   }
 
   update () {
