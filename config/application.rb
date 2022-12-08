@@ -25,3 +25,5 @@ module Speakitout
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+config.action_controller.forgery_protection_origin_check: false 
