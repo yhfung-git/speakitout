@@ -71,7 +71,7 @@ export default class extends Controller {
       }
     }
     let form = `
-      <form action="http://localhost:3000/conversations/${data[0].conversation_id}/messages" data-insert-target="form" method="post" style="height: 20px;">
+      <form action="conversations/${data[0].conversation_id}/messages" data-insert-target="form" method="post" style="height: 20px;">
         <input type="text" name="body" class="border border-2 px-2" data-insert-target="text">
         <input value="${this.element.dataset.user}" type="hidden" name="user_id">
         <input type="submit" value="Send" class="submit" style="width: 100%; height: fit-content; background-color: #008952; color: white;">
