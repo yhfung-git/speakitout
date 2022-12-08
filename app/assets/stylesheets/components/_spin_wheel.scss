@@ -41,7 +41,7 @@
 
 .wheel-input {
   margin-top: 100px;
-  margin-right: 220px;
+  margin-right: 235px;
 }
 
 .wheel div{
@@ -151,17 +151,17 @@
 .triangle {
   position: absolute;
 	top: 0px;
-  left: 23%;
+  left: 24%;
 	transform: translateX(-50%);
-	color:#DDDDEE;
+	color:white;
   font-size: 90px;
 }
 
 
 #spin{
 	position: absolute;
-  top: 57%;
-  left: 23%;
+  top: 50%;
+  left: 50%;
 	transform:translate(-50%,-50%);
 	z-index:10;
 	background-color: #e2e2e2;
@@ -220,5 +220,5 @@
 }
 
 .input-group {
-  width: 150%;
+  width: 170%;
 }

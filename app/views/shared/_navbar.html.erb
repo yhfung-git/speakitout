@@ -20,6 +20,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <li>
+            <%= link_to current_user.photo.attached? ? ( cl_image_tag current_user.photo.key, :height=>400, :width=>400, crop: :crop, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ), user_path %>
+          </li>
           <li class="nav-item" data-controller="hide">
             <a href="" class="nav-link position-relative" data-action="click->hide#activate">
               <span class="notification position-absolute translate-middle badge rounded-pill bg-danger">
@@ -27,9 +30,6 @@
               </span>
               <i class="fa-solid fa-comment-dots"></i>
             </a>
-          </li>
-          <li>
-            <%= link_to current_user.photo.attached? ? ( cl_image_tag current_user.photo.key, :height=>400, :width=>400, crop: :crop, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ) : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "avatar", 'aria-haspopup': true, 'aria-expanded': false ), user_path %>
           </li>
           <li class="nav-item">
             <%= link_to "/articles", class: "nav-link" do %>
