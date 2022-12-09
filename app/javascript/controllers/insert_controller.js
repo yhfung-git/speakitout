@@ -78,9 +78,10 @@ export default class extends Controller {
           <input type="submit" value="↑" class="submit position-absolute rounded-5" style="width: 25px; height: fit-content; background-color: #008952; color: white; ">
       </form>
       `
-    if (this.form_containerTarget.innerHTML == "\n    ") {
+    if (this.form_containerTarget.childElementCount === 0) {
       this.form_containerTarget.insertAdjacentHTML('beforeend', form)
       this.selectForm();
     }
+    console.log(this.form_containerTarget)
   }
 }
