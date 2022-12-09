@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ChecknotifController from "./checknotif_controller"
+application.register("checknotif", ChecknotifController)
+
 import DisplayCardInfosController from "./display_card_infos_controller"
 application.register("display-card-infos", DisplayCardInfosController)
 
