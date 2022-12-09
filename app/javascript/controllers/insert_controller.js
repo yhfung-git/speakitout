@@ -82,6 +82,5 @@ export default class extends Controller {
       this.form_containerTarget.insertAdjacentHTML('beforeend', form)
       this.selectForm();
     }
-    console.log(this.form_containerTarget)
   }
 }
