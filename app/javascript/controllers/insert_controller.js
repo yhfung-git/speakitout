@@ -71,6 +71,7 @@ export default class extends Controller {
         }
       }
     }
+    this.outputTarget.scrollTop = this.outputTarget.scrollHeight;
     let form = `
       <form action="${host}/conversations/${data[0].conversation_id}/messages" class="d-flex justify-content-end position-relative" data-insert-target="form" method="post" style="bottom: 20px; height: 25px;">
         <input value="${this.element.dataset.user}" type="hidden" name="user_id">
