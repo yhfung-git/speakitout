@@ -21,6 +21,11 @@ export default class extends Controller {
 
   send(event) {
     event.preventDefault();
+      try {
+        document.querySelector(".notification").setAttribute("hidden", "true")
+      } catch (e) {
+        console.log(e);
+      }
     let x = event.target.parentElement.dataset.conv
     if (typeof x == 'string') {
       data = x
@@ -73,10 +78,10 @@ export default class extends Controller {
     }
     this.outputTarget.scrollTop = this.outputTarget.scrollHeight;
     let form = `
-      <form action="${host}/conversations/${data[0].conversation_id}/messages" class="d-flex justify-content-end position-relative" data-insert-target="form" method="post" style="bottom: 20px; height: 25px;">
-        <input value="${this.element.dataset.user}" type="hidden" name="user_id">
-          <input type="text" name="body" class="position-absolute border border-2 p-2 rounded-5" data-insert-target="text">
-          <input type="submit" value="↑" class="submit position-absolute rounded-5" style="width: 25px; height: fit-content; background-color: #008952; color: white; ">
+      <form action="${host}/conversations/${data[0].conversation_id}/messages" class="form-messages d-flex justify-content-end position-relative" data-insert-target="form" method="post" style="bottom: 20px; height: 25px;">
+      <input value="${this.element.dataset.user}" type="hidden" name="user_id">
+      <input type="text" name="body" class="position-absolute border border-2 p-2 rounded-5" data-insert-target="text">
+      <input type="submit" value="↑" class="submit position-absolute rounded-5" style="width: 25px; height: fit-content; background-color: #008952; color: white; ">
       </form>
       `
     if (this.form_containerTarget.childElementCount === 0) {

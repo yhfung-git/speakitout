@@ -1,8 +1,11 @@
 import { Controller } from "@hotwired/stimulus"
+  
+let i = 0;
 
 // Connects to data-controller="hide"
 export default class extends Controller {
   connect() {
+
   }
 
   activate(event) {
@@ -22,4 +25,9 @@ export default class extends Controller {
   }
 }
 
-
+/*
+  form = document.querySelector(".form-messages")
+form.addEventListener("submit", (event) => {
+  console.log(this.notificationTarget.value)
+})
+  */ 
